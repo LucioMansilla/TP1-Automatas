@@ -36,13 +36,13 @@ int isVisited(int visited[][2], int state, int symbol, int size) {
 int ord(char c) {
   if (c == '_')
     return LAMBDA;
-  return abs(48 - (int)c);
+  return abs(DELTA_SYMBOL - (int)c);
 }
 
 char chr(int i) {
   if (i == LAMBDA)
     return (char)95;
-  return (char)(48 + i);
+  return (char)(DELTA_SYMBOL + i);
 }
 
 int in(List *list, List **listArray, int listArraySize) {

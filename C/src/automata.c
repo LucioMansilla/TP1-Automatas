@@ -197,7 +197,7 @@ void parserTransitions(int from, int to, int *symbols, int sizeSymbols,
 }
 
 void printTransition(Transition t) {
-  printf("From %d with %c to: ", t.from, (char)(t.symbol + 97));
+  printf("From %d with %c to: ", t.from, (char)(t.symbol + DELTA_SYMBOL));
   printList(t.to);
 }
 
