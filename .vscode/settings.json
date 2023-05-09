@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "bit": "c",
+        "compare": "c",
+        "cmath": "c"
+    }
+}
