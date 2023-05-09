@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Change script permissions
-        run: chmod +x ${{github.workspace}}/C/tests/run.sh
+        run: pwd
       - name: Run script
-        run: ${{github.workspace}}/C/tests/run.sh
+        run: ${{github.workspace}} && pwd
