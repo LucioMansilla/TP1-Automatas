@@ -1,0 +1,16 @@
+name: Run script on push to main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  runsh:
+    name: Run shell script
+    runs-on: ubuntu-latest
+    steps:
+      - name: Change script permissions
+        run: chmod +x ${{github.workspace}}/TP1-AUTOMATAS/C/tests/run.sh
+      - name: Run script
+        run: ${{github.workspace}}/TP1-AUTOMATAS/C/tests/run.sh
