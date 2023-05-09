@@ -13,4 +13,4 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - name: Check if file exists
-        run: ls -l ${{github.workspace}}
+        run: ls -l ${{github.workspace}}/C/tests/run.sh
