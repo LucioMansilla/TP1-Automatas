@@ -3,7 +3,7 @@ name: Run script on push to main
 on:
   push:
     branches:
-      - actions_tests
+      - action1_tests
 
 jobs:
   runsh:
