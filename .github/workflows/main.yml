@@ -10,5 +10,7 @@ jobs:
     name: Run shell script
     runs-on: ubuntu-latest
     steps:
-       - name: Check if file exists
-         run: ls -l ${{github.workspace}}
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Check if file exists
+        run: ls -l ${{github.workspace}}
