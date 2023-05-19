@@ -15,18 +15,27 @@ Automata createAutomata(List *k, List *alphabet, List **delta, int initialState,
   return a;
 }
 
+int containsAny(List *l1, List *l2) {
+  for (int i = 0; i < l1->size; i++) {
+    if (contains(l2, getData(l1, i))) {
+      return 1;
+    }
+  }
+  return 0;
+}
+
 int pertains(Automata a, char *w) {
   int i = 0;
-  int d = a.initialState;
-  while (i < strlen(w) && d != -1) {
-    if (a.delta[d][ord(w[i])].next == NULL)
-      return 0;
-    d = a.delta[d][ord(w[i])].next->data;
+  List *d = lambdaClousure(a, createFrom((int[]){a.initialState}, 1));
+  while (i < strlen(w) && d->size > 0) {
+    d = move(a, d, ord(w[i]));
+    d = lambdaClousure(a, d);
     i++;
   }
-
-  return contains(a.finalStates, d);
+  return containsAny(a.finalStates, d);
 }
+
+
 
 List *move(Automata a, List *states, int symbol) {
   List *newStates = createEmptyList();
@@ -45,6 +54,20 @@ List *move(Automata a, List *states, int symbol) {
   }
   return newStates;
 }
+
+Automata *concat(Automata automaton_1, Automata automaton_2){
+  //
+  List *new_k = createK(automaton_1.k->size + automaton_2.k->size);
+  List *new_alphabet = unionAlphabet(automaton_1.alphabet->size + automaton_2.alphabet->size);
+
+  Automata *automata = (Automata *)malloc(sizeof(Automata));
+  automata->alphabet = automaton_1.alphabet;
+  automata->initialState = automaton_1.initialState;
+  automata->finalStates = automaton_2.finalStates;
+  automata->delta = getDelta(concatTransitions(automaton_1, automaton_2), automata->k->size);
+  return automata;
+}
+
 
 List *lambdaClousure(Automata a, List *states) {
   int visited[a.k->size][2];

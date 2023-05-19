@@ -5,6 +5,7 @@
 #define ALPHABET_SIZE 123
 #define SENTINEL -1
 #define LAMBDA 47
+#define DELTA_SYMBOL 48
 
 List **getDelta(Transition transitions[], int k);
 int isVisited(int visited[][2], int state, int symbol, int size);

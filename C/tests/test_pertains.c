@@ -2,6 +2,7 @@
 #include "../libs/linked_list.h"
 #include <stdio.h>
 #include <string.h>
+#include <assert.h>
 
 int main(int argc, char *argv[]) {
 
@@ -24,6 +25,12 @@ int main(int argc, char *argv[]) {
                               createFrom((int[]){2}, 1));
   printAutomata(a);
   char test_cases[3][6] = {"01", "01111", "010101"};
+  assert(pertains(a, "01") == 1);
+  assert(pertains(a, "10") == 0);
+  assert(pertains(a, "001") == 0);
+  assert(pertains(a, "011") == 1);
+  assert(pertains(a, "010") == 0);
+  assert(pertains(a, "0110") == 1);
 
   int result = 1;
   for (int i = 0; i < 3; i++) {
