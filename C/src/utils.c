@@ -6,8 +6,8 @@ List **getDelta(Transition transitions[], int k) {
   int kLength = k;
   List **matrixList = (List **)malloc(kLength * sizeof(List *));
 
-  for (int i = 0; i < kLength; i++) {
-    matrixList[i] = (List *)malloc(ALPHABET_SIZE * sizeof(List));
+  for (int i = 0; i <kLength; i++) {
+    matrixList[i] = (List *)malloc(ALPHABET_SIZE  * sizeof(List));
     for (int j = 0; j < ALPHABET_SIZE; j++) {
       matrixList[i][j] = *createEmptyList();
     }

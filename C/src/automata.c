@@ -55,18 +55,139 @@ List *move(Automata a, List *states, int symbol) {
   return newStates;
 }
 
-Automata *concat(Automata automaton_1, Automata automaton_2){
-  //
-  List *new_k = createK(automaton_1.k->size + automaton_2.k->size);
-  List *new_alphabet = unionAlphabet(automaton_1.alphabet->size + automaton_2.alphabet->size);
-
-  Automata *automata = (Automata *)malloc(sizeof(Automata));
-  automata->alphabet = automaton_1.alphabet;
-  automata->initialState = automaton_1.initialState;
-  automata->finalStates = automaton_2.finalStates;
-  automata->delta = getDelta(concatTransitions(automaton_1, automaton_2), automata->k->size);
-  return automata;
+List* unionAlphabet(List *alphabet_1, List *alphabet_2){
+  List *new_alphabet = createEmptyList();
+  for(int i = 0; i < alphabet_1->size; i++){
+    add(new_alphabet, getData(alphabet_1, i));
+  }
+  for(int i = 0; i < alphabet_2->size; i++){
+    add(new_alphabet, getData(alphabet_2, i));
+  }
+  return new_alphabet;
 }
+
+Automata renameStates(Automata automaton, int shift, List* new_k){
+    Automata result;
+    result.alphabet = automaton.alphabet;
+    result.initialState = automaton.initialState + shift;
+    result.finalStates = createEmptyList();
+    int mapping[automaton.k->size];
+   
+    result.delta = (List **)malloc(sizeof(List) * automaton.k->size);
+    for (int i = 0; i < automaton.k->size; i++){
+        if (contains(automaton.finalStates, i)){
+            add(result.finalStates, i+shift);
+        }
+        mapping[i] = i+shift;
+    }
+    for (int i = 0; i < automaton.k->size + shift; i++){
+        result.delta[i] = (List *)malloc(sizeof(List) * ALPHABET_SIZE);
+        for (int j = 0; j < ALPHABET_SIZE; j++){
+            result.delta[i][j] = *createEmptyList();
+        }
+    }
+
+    for (int i = 0; i <automaton.k->size; i++){
+        for (int j = 0; j <ALPHABET_SIZE; j++){
+            for (int k = 0; k < automaton.delta[i][j].size; k++){
+                add(&result.delta[i+shift][j], mapping[getData(&automaton.delta[i][j], k)]);
+            }
+        }
+    }
+
+   for (int i = 0; i <automaton.k->size; i++){
+            if (automaton.delta[i][LAMBDA].size){
+                for (int k = 0; k < automaton.delta[i][LAMBDA].size; k++){
+                    add(&result.delta[i+shift][LAMBDA], mapping[getData(&automaton.delta[i][LAMBDA], k)]);
+                }
+            }
+        
+    } 
+
+
+
+    //now print the delta of the shifted result
+ /*    printf("-------New-------\n");
+    printf("K: ");
+    printList(new_k);
+    printf("Alphabet: ");
+    printList(result.alphabet);
+    printf("Delta: \n");
+    for (int i = 0; i < automaton.k->size+shift; i++) {
+        for (int j = 0; j < ALPHABET_SIZE; j++) {
+            if (result.delta[i][j].size) {
+            
+                printf("From %d with %c to ", i, chr(j)); 
+                printList(&result.delta[i][j]);
+            }
+        }
+    } */
+   /*  printf("Initial state: %d\n", result.initialState);
+    printf("Final states: \n");
+    printf("aa");
+    printList(result.finalStates);
+    printf("---------------------\n"); */
+
+    Automata a = createAutomata(new_k, result.alphabet, result.delta, result.initialState, result.finalStates);
+    return a;
+}
+
+Automata concat(Automata automaton_1, Automata automaton_2){
+ 
+  List *new_k = createK(automaton_1.k->size + automaton_2.k->size);
+  List *new_alphabet = unionAlphabet(automaton_1.alphabet, automaton_2.alphabet);
+  int new_initialState = automaton_1.initialState;
+  Automata automata_temp = renameStates(automaton_2, automaton_1.k->size, new_k);
+  int shift = automaton_1.k->size;
+  List* final_states = automata_temp.finalStates;
+  printf("New size delta automata temp: %d\n", automata_temp.k->size);
+  List ** new_delta = (List **)malloc(sizeof(List) * (automaton_1.k->size + shift));
+ 
+  for (int i = 0; i < automaton_1.k->size + shift; i++){
+    new_delta[i] = (List *)malloc(sizeof(List) * ALPHABET_SIZE);
+    for (int j = 0; j < ALPHABET_SIZE; j++){
+      new_delta[i][j] = *createEmptyList();
+    }
+  }
+
+  for (int i = 0; i < automaton_1.k->size; i++){
+    for (int j = 0; j < ALPHABET_SIZE; j++){
+      for (int k = 0; k < automaton_1.delta[i][j].size; k++){
+        add(&new_delta[i][j], getData(&automaton_1.delta[i][j], k));
+      }
+    }
+  }
+
+
+  for (int i = shift; i < automaton_1.k->size +shift; i++){
+    for (int j = 0; j < ALPHABET_SIZE; j++){
+       for (int k = 0; k < automata_temp.delta[i][j].size; k++){
+          printf("Valores de i: %d, j: %d, k: %d\n", i, j, k);
+          add(&new_delta[i][j], getData(&automata_temp.delta[i][j], k));
+      } 
+    }
+  }
+   List delta_0 = automaton_1.delta[0][0];
+  printList(&delta_0);
+  printf("Delt bbbguga: \n");
+  for (int i = 0; i < automaton_1.k->size + shift; i++) {
+    for (int j = 0; j < ALPHABET_SIZE; j++) {
+      if (new_delta[i][j].size) {
+        printf("From %d with %c to ", i, chr(j));
+        printList(&new_delta[i][j]);
+      }
+    }
+  }
+
+  for (int i = 0; i < automaton_1.finalStates->size; i++){
+    add(&new_delta[getData(automaton_1.finalStates, i)][LAMBDA], automata_temp.initialState);
+  }
+  Automata new = createAutomata(new_k, new_alphabet, new_delta, new_initialState, final_states);
+  printAutomata(new);
+
+  return new;
+}
+
 
 
 List *lambdaClousure(Automata a, List *states) {
