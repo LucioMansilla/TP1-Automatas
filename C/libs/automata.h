@@ -2,7 +2,8 @@
 #define AUTOMATA_H
 #include "utils.h"
 
-typedef struct {
+typedef struct
+{
   List *k;
   List *alphabet;
   List **delta;
@@ -20,10 +21,9 @@ Automata transformAFNDtoAFD(Automata a);
 
 Automata readAutomatafromDot(char *filename);
 void writeAutomataToDot(Automata a, char *filename);
-Automata renameStates(Automata automaton, int shift, List* new_k);
+Automata renameStates(Automata automaton, int shift, List *new_k);
 Automata concat(Automata a, Automata b);
 Automata kleene_clousure(Automata automaton);
-
-
+Automata unionA(Automata automaton_1, Automata automaton_2);
 
 #endif
