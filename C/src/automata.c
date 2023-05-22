@@ -132,6 +132,42 @@ Automata renameStates(Automata automaton, int shift, List* new_k){
     return a;
 }
 
+Automata kleene_clousure(Automata automaton){
+  List *new_k = createK(automaton.k->size +2);
+  List *new_alphabet = automaton.alphabet;
+  int new_initialState = 0;
+  Automata shifteado = renameStates(automaton, 1, new_k);
+  List **new_delta = (List **)malloc(sizeof(List) * (automaton.k->size + 2));
+
+  for (int i = 0; i < automaton.k->size + 2; i++){
+    new_delta[i] = (List *)malloc(sizeof(List) * ALPHABET_SIZE);
+    for (int j = 0; j < ALPHABET_SIZE; j++){
+      new_delta[i][j] = *createEmptyList();
+    }
+  }
+
+  add(&new_delta[0][LAMBDA], shifteado.initialState);
+
+  for (int i = 1; i < shifteado.k->size - 1 ; i++){
+    for (int j = 0; j < ALPHABET_SIZE; j++){
+      for (int k = 0; k < shifteado.delta[i][j].size; k++){
+        add(&new_delta[i][j], getData(&shifteado.delta[i][j], k));
+      }
+    }
+  }
+
+  //final states
+  for (int i = 0; i < shifteado.finalStates->size; i++){
+    add(&new_delta[getData(shifteado.finalStates, i)][LAMBDA], shifteado.initialState);
+    add(&new_delta[getData(shifteado.finalStates, i)][LAMBDA], shifteado.k->size-1);
+  }
+  List* final_states = createEmptyList();
+  add(final_states, shifteado.k->size-1);
+  add(&new_delta[0][LAMBDA], shifteado.k->size-1);
+  return createAutomata(new_k, new_alphabet, new_delta, new_initialState, final_states);
+  
+
+}
 Automata concat(Automata automaton_1, Automata automaton_2){
  
   List *new_k = createK(automaton_1.k->size + automaton_2.k->size);
@@ -187,6 +223,8 @@ Automata concat(Automata automaton_1, Automata automaton_2){
 
   return new;
 }
+
+
 
 
 

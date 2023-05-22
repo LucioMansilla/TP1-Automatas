@@ -22,6 +22,8 @@ Automata readAutomatafromDot(char *filename);
 void writeAutomataToDot(Automata a, char *filename);
 Automata renameStates(Automata automaton, int shift, List* new_k);
 Automata concat(Automata a, Automata b);
+Automata kleene_clousure(Automata automaton);
+
 
 
 #endif
