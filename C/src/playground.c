@@ -10,9 +10,10 @@ int main(int argc, char *argv[])
   char *out_file = argv[2];
 
   Automata AFND = readAutomatafromDot(in_file);
+  Automata AFND1 = readAutomatafromDot(out_file);
   //  Automata AFND2 = readAutomatafromDot(in_file);
-  printAutomata(AFND);
-  printf("Now the other: \n");
+  // printAutomata(AFND);
+  // printf("Now the other: \n");
   // printAutomata(AFND2);
 
   //    Automata concated = concat(AFND, AFND2);
@@ -22,6 +23,6 @@ int main(int argc, char *argv[])
   // printAutomata(kleeneado);
 
   printf("Union: \n");
-  Automata u = unionA(AFND, AFND);
+  Automata u = unionA(AFND, AFND1);
   printAutomata(u);
 }

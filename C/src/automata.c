@@ -125,21 +125,24 @@ Automata renameStates(Automata automaton, int shift, List *new_k)
   }
 
   // now print the delta of the shifted result
-  /*    printf("-------New-------\n");
-     printf("K: ");
-     printList(new_k);
-     printf("Alphabet: ");
-     printList(result.alphabet);
-     printf("Delta: \n");
-     for (int i = 0; i < automaton.k->size+shift; i++) {
-         for (int j = 0; j < ALPHABET_SIZE; j++) {
-             if (result.delta[i][j].size) {
+  /*printf("-------New-------\n");
+  printf("K: ");
+  printList(new_k);
+  printf("Alphabet: ");
+  printList(result.alphabet);
+  printf("Delta: \n");
+  for (int i = 0; i < automaton.k->size + shift; i++)
+  {
+    for (int j = 0; j < ALPHABET_SIZE; j++)
+    {
+      if (result.delta[i][j].size)
+      {
 
-                 printf("From %d with %c to ", i, chr(j));
-                 printList(&result.delta[i][j]);
-             }
-         }
-     } */
+        printf("From %d with %c to ", i, chr(j));
+        printList(&result.delta[i][j]);
+      }
+    }
+  }*/
   /*  printf("Initial state: %d\n", result.initialState);
    printf("Final states: \n");
    printf("aa");
@@ -197,14 +200,16 @@ Automata unionA(Automata automaton_1, Automata automaton_2)
   int i = 0;
 
   List *new_k = createK(automaton_1.k->size + automaton_2.k->size + 2);
+
   List *new_alphabet = unionAlphabet(automaton_1.alphabet, automaton_2.alphabet);
 
   List *final_state = createEmptyList();
+
   add(final_state, new_k->size - 1);
 
   Automata shifteado_1 = renameStates(automaton_1, 1, new_k);
 
-  Automata shifteado_2 = renameStates(automaton_2, shifteado_1.k->size, new_k);
+  Automata shifteado_2 = renameStates(automaton_2, automaton_1.k->size + 1, new_k);
 
   List **new_delta = (List **)malloc(sizeof(List) * (new_k->size));
 
@@ -220,7 +225,7 @@ Automata unionA(Automata automaton_1, Automata automaton_2)
   add(&new_delta[0][LAMBDA], shifteado_1.initialState);
   add(&new_delta[0][LAMBDA], shifteado_2.initialState);
 
-  for (int i = 1; i < automaton_1.k->size; i++)
+  for (int i = 1; i < automaton_1.k->size + 1; i++)
   {
     for (int j = 0; j < ALPHABET_SIZE; j++)
     {
@@ -231,7 +236,7 @@ Automata unionA(Automata automaton_1, Automata automaton_2)
     }
   }
 
-  int shift = automaton_1.k->size - 1;
+  int shift = automaton_1.k->size;
 
   for (int i = shift; i < shift + automaton_2.k->size; i++)
   {
@@ -240,23 +245,24 @@ Automata unionA(Automata automaton_1, Automata automaton_2)
       for (int k = 0; k < shifteado_2.delta[i][j].size; k++)
       {
         add(&new_delta[i][j], getData(&shifteado_2.delta[i][j], k));
-        scanf("%d", &i);
       }
     }
   }
 
-  for (int i = 0; i < shifteado_1.finalStates->size; i++)
+  for (int i = 0; i < automaton_1.finalStates->size; i++)
   {
     add(&new_delta[getData(shifteado_1.finalStates, i)][LAMBDA], new_k->size - 1);
   }
 
   for (int i = 0; i < shifteado_2.finalStates->size; i++)
   {
-    add(&new_delta[getData(shifteado_2.finalStates, i) + shift][LAMBDA], new_k->size - 1);
+    add(&new_delta[getData(shifteado_2.finalStates, i)][LAMBDA], new_k->size - 1);
   }
 
   return createAutomata(new_k, new_alphabet, new_delta, 0, final_state);
+
 }
+
 
 Automata concat(Automata automaton_1, Automata automaton_2)
 {
