@@ -1,5 +1,6 @@
 #include "../libs/automata.h"
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -75,6 +76,8 @@ List *unionAlphabet(List *alphabet_1, List *alphabet_2)
   }
   return new_alphabet;
 }
+
+
 
 Automata renameStates(Automata automaton, int shift, List *new_k)
 {
@@ -153,6 +156,34 @@ Automata renameStates(Automata automaton, int shift, List *new_k)
   return a;
 }
 
+/* 
+  S -> E#
+  E -> T Eprime
+  Eprime -> /TEprime | LAMBDA
+  T -> FTprime
+  Tprime -> .FTprime | LAMBDA
+  F -> PFprime
+  Fprime -> * | LAMBDA
+
+  P -> (E)
+  P -> L
+  L -> a | b | c  
+
+Parser descendente recursivo (Pseudocódigo):
+
+bool Ps() {
+  según cc:
+     si cc == ' ( ':
+        
+         
+
+}
+
+
+
+ */
+
+
 Automata kleene_clousure(Automata automaton)
 {
   List *new_k = createK(automaton.k->size + 2);
@@ -194,6 +225,263 @@ Automata kleene_clousure(Automata automaton)
   add(&new_delta[0][LAMBDA], shifteado.k->size - 1);
   return createAutomata(new_k, new_alphabet, new_delta, new_initialState, final_states);
 }
+
+
+List_List *createEmptyListList()
+{
+  List_List *list = (List_List *)malloc(sizeof(List_List));
+  list->next = NULL;
+  list->size = 0;
+  return list;
+}
+
+List* getList(List_List *list, int index){
+  int size = list->size;
+ 
+  while (index > size)
+  {
+     
+    list = list->next;
+   
+  }
+  if (list == NULL)
+  {
+    printf("algo");
+  }
+  return list->list;
+}
+
+void print_list_list(List_List *list)
+{
+  int size = list->size;
+  List_List* curr = list->next;
+   for (int i = 0; i < size; i++)
+  {
+    printList(curr->list);
+    curr = curr->next;
+  }  
+}
+
+int get_equivalent_class(List_List *P, int state){
+  int size = P->size;
+  List_List* curr = P->next;
+  for (int i = 0; i < size; i++)
+  {
+    if(contains(curr->list, state)){
+      return i;
+    }
+    curr = curr->next;
+  }
+  return -1;
+}
+
+List * get_pi(List_List *P, int idx){
+  int size = P->size;
+  List_List* curr = P->next;
+  for (int i = 0; i < size; i++)
+  {
+    if(i == idx){
+      return curr->list;
+    }
+    curr = curr->next;
+  }
+  return NULL;
+}
+
+
+void quotient_playground(Automata automaton){
+//P = {K-F,F}
+    List_List *P = createEmptyListList();
+    List_List *P_prime = createEmptyListList();
+    bool partition_change = false;
+    bool same_equivalence = false;
+    List *K_F = createEmptyList();
+    List *F = createEmptyList();
+    for(int i = 0; i < automaton.k->size; i++){
+        if(!contains(automaton.finalStates, i)){
+            add(K_F, i);
+        }
+        else{
+            add(F, i);
+        }
+    }
+    add_list_list(P, K_F);
+    add_list_list(P,F);
+
+    int marked[automaton.k->size];
+    for (int i = 0; i < automaton.k->size; i++)
+    {
+      marked[i] = false;
+    }
+
+
+    while (!partition_change)
+    {
+      List_List *curr = P->next;
+      for(int i = 0; i <P->size; i++){
+        List *X_i = get_pi(P, i);
+        for(int i = 0; i< X_i->size;i++){
+          int e = getData(X_i, i);
+          if(marked[e]){
+            continue;
+          }
+          marked[e] = true;
+        }
+      }
+      
+
+      partition_change = true;
+    }
+    //print the markeds
+    for (int i = 0; i < automaton.k->size; i++)
+    {
+      printf("%d ", marked[i]);
+      printf("idx: %d",i);
+      printf("\n");
+    }
+    printf("\n");
+
+    
+         
+        //printList(P->next->list);
+
+   // add_list_list(P, F);
+   //printf("size: %d\n", P->size);
+  //print_list_list(P);
+  
+}
+
+Automata Minimize(Automata automaton){
+  
+
+
+}
+
+
+ void quotient_set(Automata automaton){
+    //P = {K-F,F}
+    List_List *P = createEmptyListList();
+    List_List *P_prime = createEmptyListList();
+    bool partition_change = false;
+    bool same_equivalence;
+    List *K_F = createEmptyList();
+    List *F = createEmptyList();
+    for(int i = 0; i < automaton.k->size; i++){
+        if(!contains(automaton.finalStates, i)){
+            add(K_F, i);
+        }
+        else{
+            add(F, i);
+        }
+    }
+    add_list_list(P, K_F);
+    add_list_list(P,F);
+
+    int marked[automaton.k->size];
+    for (int i = 0; i < automaton.k->size; i++)
+    {
+      marked[i] = false;
+    }
+
+
+    while (!partition_change)
+    {
+
+      List_List *curr = P->next;
+          for (int i = 0; i < automaton.k->size; i++)
+    {
+      marked[i] = false;
+    }
+
+      for(int i = 0; i <P->size; i++){
+         List *X_i = get_pi(P, i);
+         
+        for(int j = 0; j< X_i->size;j++){
+          int e = getData(X_i, j);
+          if(marked[e]){
+            continue;
+          }
+  
+          marked[e] = true;
+          List* X_prime = createEmptyList();
+   
+          add(X_prime, e);
+  
+          for(int k = 0; k< X_i->size;k++){
+            int e_prime = getData(X_i, k);
+
+            if(marked[e_prime]){
+              continue;
+            }
+            same_equivalence = true;
+      
+
+
+            for(int r = 0; r < automaton.alphabet->size; r++){
+
+              int symbol = getData(automaton.alphabet,r);
+              int dest_e = getData(&automaton.delta[e][symbol], 0);
+              int dest_e_prime = getData(&automaton.delta[e_prime][symbol], 0);
+
+
+              int class_dest_e = get_equivalent_class(P, dest_e);
+
+              int class_dest_e_prime = get_equivalent_class(P, dest_e_prime);
+
+
+              if (class_dest_e != class_dest_e_prime)
+              {
+                same_equivalence = false;
+                break;
+              }
+
+            }
+
+
+
+
+            if(same_equivalence){
+              marked[e_prime] = true;
+              add(X_prime, e_prime); 
+            }
+          }
+
+          add_list_list(P_prime, X_prime);
+  
+          }
+
+         
+        }
+
+        if (P->size == P_prime->size){
+          printf("Size of P");
+          printf("%d", P->size);
+
+          partition_change = true;
+          break;
+        }
+        else
+        {
+          printf("P_prime: ");
+          print_list_list(P_prime);
+          P = P_prime;
+          printf("P: ");
+
+          print_list_list(P);
+          P_prime = createEmptyListList();
+        }
+    }
+     // printList(P->next->list);
+
+   // add_list_list(P, F);
+   //printf("size: %d\n", P->size);
+  printf("----------------------------");
+  print_list_list(P);
+  
+  
+  
+} 
+
 
 Automata unionA(Automata automaton_1, Automata automaton_2)
 {

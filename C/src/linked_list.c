@@ -61,6 +61,39 @@ void add(List *ls, int data) {
   ls->size++;
 }
 
+void add_list_list(List_List *ls, List *data) {
+  
+  if(ls->next == NULL){
+    ls->next = (List_List *)malloc(sizeof(List_List));
+    ls->next->list = data;
+    ls->next->next = NULL;
+    ls->size = 1;
+    printf("entro\n");
+    return;
+  }
+  List_List *cur = ls->next;
+  while (cur->next != NULL) {
+    cur = cur->next;
+  }
+  List_List *newNode = (List_List *)malloc(sizeof(List_List));
+  newNode->list = data;
+  newNode->next = NULL;
+  cur->next = newNode;
+  ls->size++;
+
+}
+
+List_List* create_node_list_list(List_List *ls, List *data) {
+  List_List *newNode = (List_List *)malloc(sizeof(List_List));
+  newNode->list = data;
+  newNode->next = NULL;
+  ls->next = newNode;
+  return newNode;
+}
+
+
+
+
 void append(List *ls, int data) {
   Node *cur = ls->next;
   if (!contains(ls, data)) {
@@ -88,7 +121,10 @@ List *createEmptyList() {
 }
 
 void printList(List *ls) {
+ 
   Node *cur = ls->next;
+ ;
+ 
   if (cur == NULL) {
     printf("Empty list\n");
     return;
@@ -101,6 +137,7 @@ void printList(List *ls) {
       printf("->");
     }
   }
+   
   printf("->NULL\n");
 }
 

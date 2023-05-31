@@ -8,7 +8,7 @@ set(SRC_DIR ${automatasTP_SOURCE_DIR}/src)
 set(TESTS_EXEC ${automatasTP_SOURCE_DIR}/tests/exec)
 
 
-add_executable(automata ${SRC_DIR}/playground.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
+add_executable(automata ${SRC_DIR}/tp3.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
 target_include_directories(automata PUBLIC ${automatasTP_SOURCE_DIR}/src)
 set_target_properties(automata PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${automatasTP_SOURCE_DIR}/src)
 
