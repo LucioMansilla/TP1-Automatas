@@ -10,6 +10,14 @@ cmake -E make_directory build && cmake -E chdir build cmake .. && cmake --build 
 # Change back to TP-AUTOMATAS/C/tests directory
 cd tests
 
+./exec/test_concat >> $LOGFILE
+if [ $? -eq 1 ]
+then
+ echo "test_concat passed"
+else
+ echo "test_concat failed"
+fi
+
 
 ./exec/test_afnd_to_afd > $LOGFILE
 if [ $? -eq 1 ]
@@ -59,6 +67,24 @@ then
  echo "test_read_and_write passed"
 else
  echo "test_read_and_write failed"
+fi
+
+
+
+./exec/test_union >> $LOGFILE
+if [ $? -eq 1 ]
+then
+ echo "test_union passed"
+else
+ echo "test_union failed"
+fi
+
+./exec/test_kleene >> $LOGFILE
+if [ $? -eq 1 ]
+then
+ echo "test_kleene passed"
+else
+ echo "test_kleene failed"
 fi
 
 

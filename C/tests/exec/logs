@@ -58,6 +58,7 @@ From 1 with c to 2->NULL
 From 2 with _ to 5->NULL
 From 3 with b to 4->5->NULL
 From 4 with b to 4->5->NULL
+From 5 with _ to 0->NULL
 Initial state: 0
 Final states: 5->4->NULL
 ---------------------
@@ -112,8 +113,50 @@ From 1 with c to 2->NULL
 From 2 with _ to 5->NULL
 From 3 with b to 4->5->NULL
 From 4 with b to 4->5->NULL
+From 5 with _ to 0->NULL
 Initial state: 0
 Final states: 5->4->NULL
 ---------------------
 
 --- Test Read and Write Passed ---
+--- Test Union ---
+Union: 
+-------Automata-------
+K: 11->10->9->8->7->6->5->4->3->2->1->0->NULL
+Alphabet: 1->0->NULL
+Delta: 
+From 0 with _ to 6->1->NULL
+From 1 with 0 to 2->NULL
+From 2 with 1 to 3->NULL
+From 3 with 0 to 4->NULL
+From 4 with 1 to 5->NULL
+From 4 with _ to 11->NULL
+From 5 with 0 to 4->NULL
+From 6 with 0 to 7->NULL
+From 7 with 1 to 8->NULL
+From 8 with 0 to 9->NULL
+From 9 with 1 to 10->NULL
+From 9 with _ to 11->NULL
+Initial state: 0
+Final states: 11->NULL
+---------------------
+
+--- Test Union Passed ---
+--- Test Kleene ---
+Kleene: 
+-------Automata-------
+K: 6->5->4->3->2->1->0->NULL
+Alphabet: 0->1->NULL
+Delta: 
+From 0 with _ to 6->1->NULL
+From 1 with 0 to 2->NULL
+From 2 with 1 to 3->NULL
+From 3 with 0 to 4->NULL
+From 4 with 1 to 5->NULL
+From 4 with _ to 6->1->NULL
+From 5 with 0 to 4->NULL
+Initial state: 0
+Final states: 6->NULL
+---------------------
+
+--- Test Kleene Passed ---
