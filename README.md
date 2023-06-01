@@ -64,18 +64,18 @@ Feel free to explore the code and run the provided tests. If you encounter any i
 
 ## The executables associated with each test are listed below:
 
-* [Test AFND to AFD:](./exec/test_afnd_to_afd) `./exec/test_afnd_to_afd`
-* [Test Belongs:](./exec/test_belongs) `./exec/test_belongs`
-* [Test Build:](./exec/test_build) `./exec/test_build`
-* [Test Build from Dot:](./exec/test_build_from_dot) `./exec/test_build_from_dot`
-* [Test Concat:](./exec/test_concat) `./exec/test_concat`
-* [Test Kleene:](./exec/test_kleene) `./exec/test_kleene`
-* [Test Minimize:](./exec/test_minimize) `./exec/test_minimize`
-* [Test Read and Write:](./exec/test_read_and_write) `./exec/test_read_and_write`
-* [Test Strings Belongs:](./exec/test_strings_belongs) `./exec/test_strings_belongs`
-* [Test TP1:](./exec/test_tp1) `./exec/test_tp1`
-* [Test TP2:](./exec/test_tp2) `./exec/test_tp2`
-* [Test Union:](./exec/test_union) `./exec/test_union`
+* [Test AFND to AFD:]() `./exec/test_afnd_to_afd`
+* [Test Belongs:]() `./exec/test_belongs`
+* [Test Build:]() `./exec/test_build`
+* [Test Build from Dot:]() `./exec/test_build_from_dot`
+* [Test Concat:]() `./exec/test_concat`
+* [Test Kleene:]() `./exec/test_kleene`
+* [Test Minimize:]() `./exec/test_minimize`
+* [Test Read and Write:]() `./exec/test_read_and_write`
+* [Test Strings Belongs:]() `./exec/test_strings_belongs`
+* [Test TP1:]() `./exec/test_tp1`
+* [Test TP2:]() `./exec/test_tp2`
+* [Test Union:]() `./exec/test_union`
 
 
 # PNG files(TP1):
