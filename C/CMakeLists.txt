@@ -24,15 +24,40 @@ add_executable(test_build ${TESTS_DIR}/test_build.c ${SRC_DIR}/automata.c ${SRC_
 target_include_directories(test_build PUBLIC ${automatasTP_SOURCE_DIR}/src)
 set_target_properties(test_build PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TESTS_EXEC}/)
 
-add_executable(test_strings_pertains ${TESTS_DIR}/test_strings_pertains.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
-target_include_directories(test_strings_pertains PUBLIC ${automatasTP_SOURCE_DIR}/src)
-set_target_properties(test_strings_pertains PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TESTS_EXEC}/)
+add_executable(test_strings_belongs ${TESTS_DIR}/test_strings_belongs.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
+target_include_directories(test_strings_belongs PUBLIC ${automatasTP_SOURCE_DIR}/src)
+set_target_properties(test_strings_belongs PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TESTS_EXEC}/)
 
-add_executable(test_pertains ${TESTS_DIR}/test_pertains.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
-target_include_directories(test_pertains PUBLIC ${automatasTP_SOURCE_DIR}/src)
-set_target_properties(test_pertains PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TESTS_EXEC}/)
+add_executable(test_belongs ${TESTS_DIR}/test_belongs.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
+target_include_directories(test_belongs PUBLIC ${automatasTP_SOURCE_DIR}/src)
+set_target_properties(test_belongs PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TESTS_EXEC}/)
 
 add_executable(test_read_and_write ${TESTS_DIR}/test_read_and_write.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
 target_include_directories(test_read_and_write PUBLIC ${automatasTP_SOURCE_DIR}/src)
 set_target_properties(test_read_and_write PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TESTS_EXEC}/)
+
+add_executable(test_union ${TESTS_DIR}/test_union.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
+target_include_directories(test_union PUBLIC ${automatasTP_SOURCE_DIR}/src)
+set_target_properties(test_union PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TESTS_EXEC}/)
+
+add_executable(test_concat ${TESTS_DIR}/test_concat.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
+target_include_directories(test_concat PUBLIC ${automatasTP_SOURCE_DIR}/src)
+set_target_properties(test_concat PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TESTS_EXEC}/)
+
+add_executable(test_kleene ${TESTS_DIR}/test_kleene.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
+target_include_directories(test_kleene PUBLIC ${automatasTP_SOURCE_DIR}/src)
+set_target_properties(test_kleene PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TESTS_EXEC}/)
+
+add_executable(test_tp1 ${TESTS_DIR}/test_tp1.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
+target_include_directories(test_tp1 PUBLIC ${automatasTP_SOURCE_DIR}/src)
+set_target_properties(test_tp1 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TESTS_EXEC}/)
+
+add_executable(test_tp2 ${TESTS_DIR}/test_tp2.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
+target_include_directories(test_tp2 PUBLIC ${automatasTP_SOURCE_DIR}/src)
+set_target_properties(test_tp2 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TESTS_EXEC}/)
+
+add_executable(test_minimize ${TESTS_DIR}/test_minimize.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
+target_include_directories(test_minimize PUBLIC ${automatasTP_SOURCE_DIR}/src)
+set_target_properties(test_minimize PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TESTS_EXEC}/)
+
 

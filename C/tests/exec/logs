@@ -58,13 +58,14 @@ From 1 with c to 2->NULL
 From 2 with _ to 5->NULL
 From 3 with b to 4->5->NULL
 From 4 with b to 4->5->NULL
+From 5 with _ to 0->NULL
 Initial state: 0
 Final states: 5->4->NULL
 ---------------------
 
 --- Test Build from dot Passed ---
 
---- Test PERTAINS ---
+--- Test Belongs ---
 -------Automata-------
 K: 2->1->0->NULL
 Alphabet: 1->0->NULL
@@ -81,9 +82,9 @@ Test case 01 passed
 Test case 01111 passed
 Test case 010101 passed
 
---- All pertains tests cases passed ---
+--- All belongs tests cases passed ---
 
---- Test STRING PERTAINS ---
+--- Test STRING BELONGS ---
 -------Automata-------
 K: 2->1->0->NULL
 Alphabet: 1->0->NULL
@@ -100,7 +101,7 @@ Test case ab passed
 Test case abbbb passed
 Test case ababab passed
 
---- All string pertains tests cases passed ---
+--- All string belongs tests cases passed ---
 --- Test Read and Write ---
 -------Automata-------
 K: 0->1->3->2->5->4->NULL
@@ -112,8 +113,112 @@ From 1 with c to 2->NULL
 From 2 with _ to 5->NULL
 From 3 with b to 4->5->NULL
 From 4 with b to 4->5->NULL
+From 5 with _ to 0->NULL
 Initial state: 0
 Final states: 5->4->NULL
 ---------------------
 
 --- Test Read and Write Passed ---
+--- Test Union ---
+Union: 
+-------Automata-------
+K: 11->10->9->8->7->6->5->4->3->2->1->0->NULL
+Alphabet: 1->0->NULL
+Delta: 
+From 0 with _ to 6->1->NULL
+From 1 with 0 to 2->NULL
+From 2 with 1 to 3->NULL
+From 3 with 0 to 4->NULL
+From 4 with 1 to 5->NULL
+From 4 with _ to 11->NULL
+From 5 with 0 to 4->NULL
+From 6 with 0 to 7->NULL
+From 7 with 1 to 8->NULL
+From 8 with 0 to 9->NULL
+From 9 with 1 to 10->NULL
+From 9 with _ to 11->NULL
+Initial state: 0
+Final states: 11->NULL
+---------------------
+
+--- Test Union Passed ---
+--- Test Kleene ---
+Kleene: 
+-------Automata-------
+K: 6->5->4->3->2->1->0->NULL
+Alphabet: 0->1->NULL
+Delta: 
+From 0 with _ to 6->1->NULL
+From 1 with 0 to 2->NULL
+From 2 with 1 to 3->NULL
+From 3 with 0 to 4->NULL
+From 4 with 1 to 5->NULL
+From 4 with _ to 6->1->NULL
+From 5 with 0 to 4->NULL
+Initial state: 0
+Final states: 6->NULL
+---------------------
+
+--- Test Kleene Passed ---
+ -- Test TP1 -- 
+Original automata:-------Automata-------
+K: 0->1->2->3->NULL
+Alphabet: 49->50->NULL
+Delta: 
+From 0 with a to 1->NULL
+From 1 with a to 3->NULL
+From 1 with b to 2->1->NULL
+From 3 with a to 3->NULL
+From 3 with b to 3->NULL
+Initial state: 0
+Final states: 2->NULL
+---------------------
+T: 
+T[0]: 0->NULL
+T[1]: 1->NULL
+T[2]: Empty list
+T[3]: 3->NULL
+T[4]: 1->2->NULL
+The conversion from AFND to AFD has been completed.
+You can view the result in the file AFD_TP.dot
+belongs: 0
+ -- Test TP1 passed -- 
+ -- Test TP2 -- 
+Kleene: 
+Union: 
+Minimize: 
+T: 
+T[0]: 0->8->1->14->9->7->2->15->NULL
+T[1]: Empty list
+T[2]: 3->10->NULL
+T[3]: 11->4->NULL
+T[4]: 5->12->7->2->14->9->15->NULL
+T[5]: 13->6->NULL
+ -- Test TP2 passed -- 
+T: 
+T[0]: 0->NULL
+T[1]: 1->NULL
+T[2]: Empty list
+T[3]: 2->NULL
+T[4]: 3->NULL
+T[5]: 4->NULL
+--- Test Minimize: ---
+Minimize: 
+-------Automata-------
+K: 4->3->2->1->0->NULL
+Alphabet: 0->1->NULL
+Delta: 
+From 0 with 0 to 4->NULL
+From 0 with 1 to 1->NULL
+From 1 with 0 to 1->NULL
+From 1 with 1 to 1->NULL
+From 2 with 0 to 3->NULL
+From 2 with 1 to 1->NULL
+From 3 with 0 to 1->NULL
+From 3 with 1 to 0->NULL
+From 4 with 0 to 1->NULL
+From 4 with 1 to 0->NULL
+Initial state: 2
+Final states: 4->NULL
+---------------------
+Test Minimize Passed

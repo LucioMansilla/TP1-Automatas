@@ -8,6 +8,6 @@ typedef struct {
   List *to;
 } Transition;
 
-Transition createTransition(int from, int symbol, List *to);
-
+Transition create_transition(int from, int symbol, List *to);
+void print_transition(Transition t);
 #endif

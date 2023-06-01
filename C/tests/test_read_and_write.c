@@ -5,10 +5,10 @@
 
 int main(int argc, char *argv[]) {
   printf("--- Test Read and Write ---\n");
-  Automata a = readAutomatafromDot("AFND.dot");
-  printAutomata(a);
+  Automata a = read_automaton_from_dot("AFND.dot");
+  print_automaton(a);
 
-  writeAutomataToDot(a, "testWriteAFND.dot");
+  write_automaton_to_dot(a, "testWriteAFND.dot");
 
   FILE *file;
   file = fopen("testWriteAFND.dot", "r");

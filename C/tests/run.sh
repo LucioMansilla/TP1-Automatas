@@ -10,6 +10,14 @@ cmake -E make_directory build && cmake -E chdir build cmake .. && cmake --build 
 # Change back to TP-AUTOMATAS/C/tests directory
 cd tests
 
+./exec/test_concat >> $LOGFILE
+if [ $? -eq 1 ]
+then
+ echo "test_concat passed"
+else
+ echo "test_concat failed"
+fi
+
 
 ./exec/test_afnd_to_afd > $LOGFILE
 if [ $? -eq 1 ]
@@ -35,20 +43,20 @@ else
  echo "test_build_from_dot failed"
 fi
 
-./exec/test_pertains >> $LOGFILE
+./exec/test_belongs >> $LOGFILE
 if [ $? -eq 1 ]
 then
- echo "test_pertains passed"
+ echo "test_belongs passed"
 else
- echo "test_pertains failed"
+ echo "test_belongs failed"
 fi
 
-./exec/test_strings_pertains >> $LOGFILE
+./exec/test_strings_belongs >> $LOGFILE
 if [ $? -eq 1 ]
 then
- echo "test_strings_pertains passed"
+ echo "test_strings_belongs passed"
 else
- echo "test_strings_pertains failed"
+ echo "test_strings_belongs failed"
 fi
 
 
@@ -62,4 +70,48 @@ else
 fi
 
 
-echo "Tests finished. Check $LOGFILE for more information"
+
+./exec/test_union >> $LOGFILE
+if [ $? -eq 1 ]
+then
+ echo "test_union passed"
+else
+ echo "test_union failed"
+fi
+
+./exec/test_kleene >> $LOGFILE
+if [ $? -eq 1 ]
+then
+ echo "test_kleene passed"
+else
+ echo "test_kleene failed"
+fi
+
+./exec/test_tp1 >> $LOGFILE
+if [ $? -eq 1 ]
+then
+ echo "test_tp1 passed"
+else
+ echo "test_tp1 failed"
+fi
+
+./exec/test_tp2 >> $LOGFILE
+if [ $? -eq 1 ]
+then
+ echo "test_tp2 passed"
+else
+ echo "test_tp2 failed"
+fi
+
+./exec/test_minimize >> $LOGFILE
+if [ $? -eq 1 ]
+then
+ echo "test_minimize passed"
+else
+ echo "test_minimize failed"
+fi
+
+
+echo ""
+echo "Tests finished!. Check $LOGFILE for more information"
+echo "Check tests folder for the .dot files generated"
