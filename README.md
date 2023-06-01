@@ -4,26 +4,80 @@ This is an academic project, which consists of the implementation of a Nondeterm
 
 It is written in C and Python.
 
-In C, it has different tests to test the operation of its operations.
+In C, it has different tests.
+
+
+# Usage
+
+## Building
+
+Dependencies:
+
+- [CMake >= 3.10](https://cmake.org/)
+
+- Any C Compiler (We like [GCC](https://gcc.gnu.org/))
+
+- In some cases you may need to install [g++](https://gcc.gnu.org/)
+
+Here are some important details to keep in mind:
+
+## Important Notes:
+
+* Executables are generated in the `tests/exec` directory.
+* Files "AFND_TP.dot", "AFND_TP2.dot", and "AFND.dot" are used for various tests.
+* Files "AFD_TP.dot", "kleene.dot", "union.dot", "concatenate.dot", "minimize.dot", and "write_afnd.dot" are generated after running `run.sh`.
+* You can find both input and output files in the `C/tests` directory.
+* `run.sh` will report the test status.
+* A log file will be generated after running `run.sh` in the `C/tests/exec` directory. It will contain additional information about the tests, such as printouts of automata and lists.
+
+
+## How to Run `run.sh`:
+
+To execute `run.sh` and run the tests, follow these steps:
+1. Open a terminal or command prompt.
+2. Navigate to the `C/tests` directory using the `cd` command.
+3. Run the command `./run.sh`.
+4. The script will execute the tests and print the results to the terminal or command prompt. For example:
+```
+test_concat passed
+test_afnd_to_afd passed
+test_build passed
+test_build_from_dot passed
+test_belongs passed
+test_strings_belongs passed
+test_read_and_write passed
+test_union passed
+test_kleene passed
+test_tp1 passed
+test_tp2 passed
+test_minimize passed
+
+Tests finished!. Check exec/logs for more information
+Check tests folder for the .dot files generated
+```
+
+5. After the tests complete, a log file will be generated in the `C/tests/exec` directory. This log file will contain additional information about the tests, including printouts of automata and lists.
+
+Feel free to explore the code and run the provided tests. If you encounter any issues, please refer to the log file for more information. Enjoy!
+
 
 ## The executables associated with each test are listed below:
 
-Test AFND to AFD: `./exec/test_afnd_to_afd` \
-Test Build from dot: `./exec/test_build_from_dot`\
-Test Build: `./exec/test_build`\
-Test Write to dot: `./exec/test_write_to_dot`\
-Test Pertains: `./exec/test_pertains`\
-Test Lambda Closure: `./exec/test_lambda_closure`\
-Test Move: `./exec/test_move`
+* [Test AFND to AFD:](./exec/test_afnd_to_afd) `./exec/test_afnd_to_afd`
+* [Test Belongs:](./exec/test_belongs) `./exec/test_belongs`
+* [Test Build:](./exec/test_build) `./exec/test_build`
+* [Test Build from Dot:](./exec/test_build_from_dot) `./exec/test_build_from_dot`
+* [Test Concat:](./exec/test_concat) `./exec/test_concat`
+* [Test Kleene:](./exec/test_kleene) `./exec/test_kleene`
+* [Test Minimize:](./exec/test_minimize) `./exec/test_minimize`
+* [Test Read and Write:](./exec/test_read_and_write) `./exec/test_read_and_write`
+* [Test Strings Belongs:](./exec/test_strings_belongs) `./exec/test_strings_belongs`
+* [Test TP1:](./exec/test_tp1) `./exec/test_tp1`
+* [Test TP2:](./exec/test_tp2) `./exec/test_tp2`
+* [Test Union:](./exec/test_union) `./exec/test_union`
 
-## To run the tests:
 
-```
-cd C/tests ./run.sh
-```
-
-
-# PNG files:
+# PNG files(TP1):
 
 In the `TP-AUTOMATAS/C/assets` directory, you can find the following PNG files:
 
