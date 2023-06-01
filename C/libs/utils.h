@@ -7,10 +7,10 @@
 #define LAMBDA 47
 #define DELTA_SYMBOL 48
 
-List **getDelta(Transition transitions[], int k);
-int isVisited(int visited[][2], int state, int symbol, int size);
+List **get_delta(Transition transitions[], int k);
+int is_visited(int visited[][2], int state, int symbol, int size);
 int ord(char c);
 char chr(int i);
-int in(List *list, List **listArray, int listArraySize);
+int in(List *list, List **list_array, int list_array_size);
 
 #endif

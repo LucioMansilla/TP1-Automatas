@@ -65,7 +65,7 @@ Final states: 5->4->NULL
 
 --- Test Build from dot Passed ---
 
---- Test PERTAINS ---
+--- Test Belongs ---
 -------Automata-------
 K: 2->1->0->NULL
 Alphabet: 1->0->NULL
@@ -82,9 +82,9 @@ Test case 01 passed
 Test case 01111 passed
 Test case 010101 passed
 
---- All pertains tests cases passed ---
+--- All belongs tests cases passed ---
 
---- Test STRING PERTAINS ---
+--- Test STRING BELONGS ---
 -------Automata-------
 K: 2->1->0->NULL
 Alphabet: 1->0->NULL
@@ -101,7 +101,7 @@ Test case ab passed
 Test case abbbb passed
 Test case ababab passed
 
---- All string pertains tests cases passed ---
+--- All string belongs tests cases passed ---
 --- Test Read and Write ---
 -------Automata-------
 K: 0->1->3->2->5->4->NULL
@@ -181,7 +181,7 @@ T[3]: 3->NULL
 T[4]: 1->2->NULL
 The conversion from AFND to AFD has been completed.
 You can view the result in the file AFD_TP.dot
-Pertains: 0
+belongs: 0
  -- Test TP1 passed -- 
  -- Test TP2 -- 
 Kleene: 

@@ -43,20 +43,20 @@ else
  echo "test_build_from_dot failed"
 fi
 
-./exec/test_pertains >> $LOGFILE
+./exec/test_belongs >> $LOGFILE
 if [ $? -eq 1 ]
 then
- echo "test_pertains passed"
+ echo "test_belongs passed"
 else
- echo "test_pertains failed"
+ echo "test_belongs failed"
 fi
 
-./exec/test_strings_pertains >> $LOGFILE
+./exec/test_strings_belongs >> $LOGFILE
 if [ $? -eq 1 ]
 then
- echo "test_strings_pertains passed"
+ echo "test_strings_belongs passed"
 else
- echo "test_strings_pertains failed"
+ echo "test_strings_belongs failed"
 fi
 
 

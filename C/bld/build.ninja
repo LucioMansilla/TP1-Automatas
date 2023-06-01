@@ -316,146 +316,146 @@ build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build: C_EXECUT
   TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build.pdb
 
 # =============================================================================
-# Object build statements for EXECUTABLE target test_strings_pertains
+# Object build statements for EXECUTABLE target test_strings_belongs
 
 
 #############################################
-# Order-only phony target for test_strings_pertains
+# Order-only phony target for test_strings_belongs
 
-build cmake_object_order_depends_target_test_strings_pertains: phony || CMakeFiles/test_strings_pertains.dir
+build cmake_object_order_depends_target_test_strings_belongs: phony || CMakeFiles/test_strings_belongs.dir
 
-build CMakeFiles/test_strings_pertains.dir/tests/test_strings_pertains.c.o: C_COMPILER__test_strings_pertains_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/test_strings_pertains.c || cmake_object_order_depends_target_test_strings_pertains
-  DEP_FILE = CMakeFiles/test_strings_pertains.dir/tests/test_strings_pertains.c.o.d
+build CMakeFiles/test_strings_belongs.dir/tests/test_strings_belongs.c.o: C_COMPILER__test_strings_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/test_strings_belongs.c || cmake_object_order_depends_target_test_strings_belongs
+  DEP_FILE = CMakeFiles/test_strings_belongs.dir/tests/test_strings_belongs.c.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
-  OBJECT_DIR = CMakeFiles/test_strings_pertains.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_strings_pertains.dir/tests
-  TARGET_COMPILE_PDB = CMakeFiles/test_strings_pertains.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_pertains.pdb
+  OBJECT_DIR = CMakeFiles/test_strings_belongs.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_strings_belongs.dir/tests
+  TARGET_COMPILE_PDB = CMakeFiles/test_strings_belongs.dir/
+  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs.pdb
 
-build CMakeFiles/test_strings_pertains.dir/src/automata.c.o: C_COMPILER__test_strings_pertains_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.c || cmake_object_order_depends_target_test_strings_pertains
-  DEP_FILE = CMakeFiles/test_strings_pertains.dir/src/automata.c.o.d
+build CMakeFiles/test_strings_belongs.dir/src/automata.c.o: C_COMPILER__test_strings_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.c || cmake_object_order_depends_target_test_strings_belongs
+  DEP_FILE = CMakeFiles/test_strings_belongs.dir/src/automata.c.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
-  OBJECT_DIR = CMakeFiles/test_strings_pertains.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_strings_pertains.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_strings_pertains.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_pertains.pdb
+  OBJECT_DIR = CMakeFiles/test_strings_belongs.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_strings_belongs.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/test_strings_belongs.dir/
+  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs.pdb
 
-build CMakeFiles/test_strings_pertains.dir/src/utils.c.o: C_COMPILER__test_strings_pertains_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/utils.c || cmake_object_order_depends_target_test_strings_pertains
-  DEP_FILE = CMakeFiles/test_strings_pertains.dir/src/utils.c.o.d
+build CMakeFiles/test_strings_belongs.dir/src/utils.c.o: C_COMPILER__test_strings_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/utils.c || cmake_object_order_depends_target_test_strings_belongs
+  DEP_FILE = CMakeFiles/test_strings_belongs.dir/src/utils.c.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
-  OBJECT_DIR = CMakeFiles/test_strings_pertains.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_strings_pertains.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_strings_pertains.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_pertains.pdb
+  OBJECT_DIR = CMakeFiles/test_strings_belongs.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_strings_belongs.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/test_strings_belongs.dir/
+  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs.pdb
 
-build CMakeFiles/test_strings_pertains.dir/src/transition.c.o: C_COMPILER__test_strings_pertains_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/transition.c || cmake_object_order_depends_target_test_strings_pertains
-  DEP_FILE = CMakeFiles/test_strings_pertains.dir/src/transition.c.o.d
+build CMakeFiles/test_strings_belongs.dir/src/transition.c.o: C_COMPILER__test_strings_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/transition.c || cmake_object_order_depends_target_test_strings_belongs
+  DEP_FILE = CMakeFiles/test_strings_belongs.dir/src/transition.c.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
-  OBJECT_DIR = CMakeFiles/test_strings_pertains.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_strings_pertains.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_strings_pertains.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_pertains.pdb
+  OBJECT_DIR = CMakeFiles/test_strings_belongs.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_strings_belongs.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/test_strings_belongs.dir/
+  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs.pdb
 
-build CMakeFiles/test_strings_pertains.dir/src/linked_list.c.o: C_COMPILER__test_strings_pertains_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/linked_list.c || cmake_object_order_depends_target_test_strings_pertains
-  DEP_FILE = CMakeFiles/test_strings_pertains.dir/src/linked_list.c.o.d
+build CMakeFiles/test_strings_belongs.dir/src/linked_list.c.o: C_COMPILER__test_strings_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/linked_list.c || cmake_object_order_depends_target_test_strings_belongs
+  DEP_FILE = CMakeFiles/test_strings_belongs.dir/src/linked_list.c.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
-  OBJECT_DIR = CMakeFiles/test_strings_pertains.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_strings_pertains.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_strings_pertains.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_pertains.pdb
+  OBJECT_DIR = CMakeFiles/test_strings_belongs.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_strings_belongs.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/test_strings_belongs.dir/
+  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target test_strings_pertains
+# Link build statements for EXECUTABLE target test_strings_belongs
 
 
 #############################################
-# Link the executable /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_pertains
+# Link the executable /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs
 
-build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_pertains: C_EXECUTABLE_LINKER__test_strings_pertains_RELEASE CMakeFiles/test_strings_pertains.dir/tests/test_strings_pertains.c.o CMakeFiles/test_strings_pertains.dir/src/automata.c.o CMakeFiles/test_strings_pertains.dir/src/utils.c.o CMakeFiles/test_strings_pertains.dir/src/transition.c.o CMakeFiles/test_strings_pertains.dir/src/linked_list.c.o
+build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs: C_EXECUTABLE_LINKER__test_strings_belongs_RELEASE CMakeFiles/test_strings_belongs.dir/tests/test_strings_belongs.c.o CMakeFiles/test_strings_belongs.dir/src/automata.c.o CMakeFiles/test_strings_belongs.dir/src/utils.c.o CMakeFiles/test_strings_belongs.dir/src/transition.c.o CMakeFiles/test_strings_belongs.dir/src/linked_list.c.o
   FLAGS = -O3 -DNDEBUG
-  OBJECT_DIR = CMakeFiles/test_strings_pertains.dir
+  OBJECT_DIR = CMakeFiles/test_strings_belongs.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/test_strings_pertains.dir/
-  TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_pertains
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_pertains.pdb
+  TARGET_COMPILE_PDB = CMakeFiles/test_strings_belongs.dir/
+  TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs
+  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs.pdb
 
 # =============================================================================
-# Object build statements for EXECUTABLE target test_pertains
+# Object build statements for EXECUTABLE target test_belongs
 
 
 #############################################
-# Order-only phony target for test_pertains
+# Order-only phony target for test_belongs
 
-build cmake_object_order_depends_target_test_pertains: phony || CMakeFiles/test_pertains.dir
+build cmake_object_order_depends_target_test_belongs: phony || CMakeFiles/test_belongs.dir
 
-build CMakeFiles/test_pertains.dir/tests/test_pertains.c.o: C_COMPILER__test_pertains_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/test_pertains.c || cmake_object_order_depends_target_test_pertains
-  DEP_FILE = CMakeFiles/test_pertains.dir/tests/test_pertains.c.o.d
+build CMakeFiles/test_belongs.dir/tests/test_belongs.c.o: C_COMPILER__test_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/test_belongs.c || cmake_object_order_depends_target_test_belongs
+  DEP_FILE = CMakeFiles/test_belongs.dir/tests/test_belongs.c.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
-  OBJECT_DIR = CMakeFiles/test_pertains.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_pertains.dir/tests
-  TARGET_COMPILE_PDB = CMakeFiles/test_pertains.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_pertains.pdb
+  OBJECT_DIR = CMakeFiles/test_belongs.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_belongs.dir/tests
+  TARGET_COMPILE_PDB = CMakeFiles/test_belongs.dir/
+  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs.pdb
 
-build CMakeFiles/test_pertains.dir/src/automata.c.o: C_COMPILER__test_pertains_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.c || cmake_object_order_depends_target_test_pertains
-  DEP_FILE = CMakeFiles/test_pertains.dir/src/automata.c.o.d
+build CMakeFiles/test_belongs.dir/src/automata.c.o: C_COMPILER__test_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.c || cmake_object_order_depends_target_test_belongs
+  DEP_FILE = CMakeFiles/test_belongs.dir/src/automata.c.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
-  OBJECT_DIR = CMakeFiles/test_pertains.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_pertains.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_pertains.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_pertains.pdb
+  OBJECT_DIR = CMakeFiles/test_belongs.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_belongs.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/test_belongs.dir/
+  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs.pdb
 
-build CMakeFiles/test_pertains.dir/src/utils.c.o: C_COMPILER__test_pertains_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/utils.c || cmake_object_order_depends_target_test_pertains
-  DEP_FILE = CMakeFiles/test_pertains.dir/src/utils.c.o.d
+build CMakeFiles/test_belongs.dir/src/utils.c.o: C_COMPILER__test_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/utils.c || cmake_object_order_depends_target_test_belongs
+  DEP_FILE = CMakeFiles/test_belongs.dir/src/utils.c.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
-  OBJECT_DIR = CMakeFiles/test_pertains.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_pertains.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_pertains.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_pertains.pdb
+  OBJECT_DIR = CMakeFiles/test_belongs.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_belongs.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/test_belongs.dir/
+  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs.pdb
 
-build CMakeFiles/test_pertains.dir/src/transition.c.o: C_COMPILER__test_pertains_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/transition.c || cmake_object_order_depends_target_test_pertains
-  DEP_FILE = CMakeFiles/test_pertains.dir/src/transition.c.o.d
+build CMakeFiles/test_belongs.dir/src/transition.c.o: C_COMPILER__test_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/transition.c || cmake_object_order_depends_target_test_belongs
+  DEP_FILE = CMakeFiles/test_belongs.dir/src/transition.c.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
-  OBJECT_DIR = CMakeFiles/test_pertains.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_pertains.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_pertains.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_pertains.pdb
+  OBJECT_DIR = CMakeFiles/test_belongs.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_belongs.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/test_belongs.dir/
+  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs.pdb
 
-build CMakeFiles/test_pertains.dir/src/linked_list.c.o: C_COMPILER__test_pertains_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/linked_list.c || cmake_object_order_depends_target_test_pertains
-  DEP_FILE = CMakeFiles/test_pertains.dir/src/linked_list.c.o.d
+build CMakeFiles/test_belongs.dir/src/linked_list.c.o: C_COMPILER__test_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/linked_list.c || cmake_object_order_depends_target_test_belongs
+  DEP_FILE = CMakeFiles/test_belongs.dir/src/linked_list.c.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
-  OBJECT_DIR = CMakeFiles/test_pertains.dir
-  OBJECT_FILE_DIR = CMakeFiles/test_pertains.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_pertains.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_pertains.pdb
+  OBJECT_DIR = CMakeFiles/test_belongs.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_belongs.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/test_belongs.dir/
+  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target test_pertains
+# Link build statements for EXECUTABLE target test_belongs
 
 
 #############################################
-# Link the executable /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_pertains
+# Link the executable /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs
 
-build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_pertains: C_EXECUTABLE_LINKER__test_pertains_RELEASE CMakeFiles/test_pertains.dir/tests/test_pertains.c.o CMakeFiles/test_pertains.dir/src/automata.c.o CMakeFiles/test_pertains.dir/src/utils.c.o CMakeFiles/test_pertains.dir/src/transition.c.o CMakeFiles/test_pertains.dir/src/linked_list.c.o
+build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs: C_EXECUTABLE_LINKER__test_belongs_RELEASE CMakeFiles/test_belongs.dir/tests/test_belongs.c.o CMakeFiles/test_belongs.dir/src/automata.c.o CMakeFiles/test_belongs.dir/src/utils.c.o CMakeFiles/test_belongs.dir/src/transition.c.o CMakeFiles/test_belongs.dir/src/linked_list.c.o
   FLAGS = -O3 -DNDEBUG
-  OBJECT_DIR = CMakeFiles/test_pertains.dir
+  OBJECT_DIR = CMakeFiles/test_belongs.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/test_pertains.dir/
-  TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_pertains
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_pertains.pdb
+  TARGET_COMPILE_PDB = CMakeFiles/test_belongs.dir/
+  TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs
+  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test_read_and_write
@@ -995,11 +995,11 @@ build test_kleene: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/t
 
 build test_minimize: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_minimize
 
-build test_pertains: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_pertains
+build test_belongs: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs
 
 build test_read_and_write: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_read_and_write
 
-build test_strings_pertains: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_pertains
+build test_strings_belongs: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs
 
 build test_tp1: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp1
 
@@ -1015,7 +1015,7 @@ build test_union: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/te
 #############################################
 # Folder: /home/luciom/Escritorio/TPs/TP-Automatas/C/bld
 
-build all: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_afnd_to_afd /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build_from_dot /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_pertains /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_pertains /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_read_and_write /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_union /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_concat /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_kleene /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp1 /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp2 /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_minimize
+build all: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_afnd_to_afd /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build_from_dot /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_read_and_write /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_union /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_concat /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_kleene /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp1 /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp2 /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_minimize
 
 # =============================================================================
 # Built-in targets

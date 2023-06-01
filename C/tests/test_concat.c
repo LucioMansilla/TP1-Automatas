@@ -6,12 +6,12 @@
 int main(int argc, char *argv[]) {
   printf("--- Test Concat ---\n");
 
-  Automata AFND = readAutomatafromDot("AFND_TP2.dot");
-  Automata AFND2 = readAutomatafromDot("AFND_TP2.dot");
+  Automata AFND = read_automaton_from_dot("AFND_TP2.dot");
+  Automata AFND2 = read_automaton_from_dot("AFND_TP2.dot");
 
   printf("Concat: \n");
   Automata u = concat(AFND, AFND2);
-  writeAutomataToDot(u, "concat.dot");
+  write_automaton_to_dot(u, "concat.dot");
 
   printf("\n--- Test Concat Passed ---\n");
   return 1;

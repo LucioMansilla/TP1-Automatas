@@ -5,16 +5,16 @@
 
 int main(int argc, char *argv[]) {
 
-  Automata AFND = readAutomatafromDot("AFND_TP2.dot");
-  Automata AFD = transformAFNDtoAFD(AFND);
+  Automata AFND = read_automaton_from_dot("AFND_TP2.dot");
+  Automata AFD = to_AFD(AFND);
 
   printf("--- Test Minimize: ---\n");
   Automata min = minimize(AFD);
 
   printf("Minimize: \n");
-  printAutomata(min);
+  print_automaton(min);
 
-  writeAutomataToDot(min, "minimize.dot");
+  write_automaton_to_dot(min, "minimize.dot");
   printf("Test Minimize Passed\n");
 
   return 1;
