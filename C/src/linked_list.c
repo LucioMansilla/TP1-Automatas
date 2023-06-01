@@ -2,39 +2,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-List_List *create_empty_list_list()
-{
+List_List *create_empty_list_list() {
   List_List *list = (List_List *)malloc(sizeof(List_List));
   list->next = NULL;
   list->size = 0;
   return list;
 }
 
-
-void print_list_list(List_List *list)
-{
+void print_list_list(List_List *list) {
   int size = list->size;
-  List_List* curr = list->next;
-   for (int i = 0; i < size; i++)
-  {
+  List_List *curr = list->next;
+  for (int i = 0; i < size; i++) {
     print_list(curr->list);
     curr = curr->next;
-  }  
+  }
 }
 
-
-int contains_any(List *l1, List *l2)
-{
-  for (int i = 0; i < l1->size; i++)
-  {
-    if (contains(l2, get_data(l1, i)))
-    {
+int contains_any(List *l1, List *l2) {
+  for (int i = 0; i < l1->size; i++) {
+    if (contains(l2, get_data(l1, i))) {
       return 1;
     }
   }
   return 0;
 }
-
 
 int equals(List *l1, List *l2) {
   if (l1->size != l2->size) {
@@ -96,8 +87,8 @@ void add(List *ls, int data) {
 }
 
 void add_list_list(List_List *ls, List *data) {
-  
-  if(ls->next == NULL){
+
+  if (ls->next == NULL) {
     ls->next = (List_List *)malloc(sizeof(List_List));
     ls->next->list = data;
     ls->next->next = NULL;
@@ -113,17 +104,15 @@ void add_list_list(List_List *ls, List *data) {
   new_node->next = NULL;
   cur->next = new_node;
   ls->size++;
-
 }
 
-List_List* create_node_list_list(List_List *ls, List *data) {
+List_List *create_node_list_list(List_List *ls, List *data) {
   List_List *new_node = (List_List *)malloc(sizeof(List_List));
   new_node->list = data;
   new_node->next = NULL;
   ls->next = new_node;
   return new_node;
 }
-
 
 void append(List *ls, int data) {
   Node *cur = ls->next;
@@ -152,9 +141,9 @@ List *create_empty_list() {
 }
 
 void print_list(List *ls) {
- 
+
   Node *cur = ls->next;
- 
+
   if (cur == NULL) {
     printf("Empty list\n");
     return;
@@ -167,7 +156,7 @@ void print_list(List *ls) {
       printf("->");
     }
   }
-   
+
   printf("->NULL\n");
 }
 
@@ -214,4 +203,3 @@ void free_list(List *ls) {
   }
   free(ls);
 }
-

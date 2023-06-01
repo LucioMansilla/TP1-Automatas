@@ -6,8 +6,8 @@ List **get_delta(Transition transitions[], int k) {
   int k_length = k;
   List **matrix_list = (List **)malloc(k_length * sizeof(List *));
 
-  for (int i = 0; i <k_length; i++) {
-    matrix_list[i] = (List *)malloc(ALPHABET_SIZE  * sizeof(List));
+  for (int i = 0; i < k_length; i++) {
+    matrix_list[i] = (List *)malloc(ALPHABET_SIZE * sizeof(List));
     for (int j = 0; j < ALPHABET_SIZE; j++) {
       matrix_list[i][j] = *create_empty_list();
     }
@@ -15,7 +15,8 @@ List **get_delta(Transition transitions[], int k) {
 
   int i = 0;
   while (transitions[i].from != SENTINEL) {
-    matrix_list[transitions[i].from][transitions[i].symbol] = *transitions[i].to;
+    matrix_list[transitions[i].from][transitions[i].symbol] =
+        *transitions[i].to;
     i++;
   }
 
