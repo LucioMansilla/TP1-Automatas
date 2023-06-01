@@ -32,5 +32,8 @@ void append(List *ls, int data);
 List *createK(int sizeK);
 void freeList(List *list);
 void add_list_list(List_List *ls, List *data);
+void print_list_list(List_List *list);
+int get_equivalent_index(List_List *P, int state);
+
 
 #endif

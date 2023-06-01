@@ -22,6 +22,6 @@ int main(int argc, char *argv[]) {
 
   printf("Pertains: %d\n", pertains(AFND, a));
 
-  printf(" -- Test TP1 passed -- \n"); 
+  printf(" -- Test TP1 passed -- \n");
   return 1;
 }

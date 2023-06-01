@@ -1,0 +1,15 @@
+/home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/automata.dir
+/home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/test_afnd_to_afd.dir
+/home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/test_build_from_dot.dir
+/home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/test_build.dir
+/home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/test_strings_pertains.dir
+/home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/test_pertains.dir
+/home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/test_read_and_write.dir
+/home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/test_union.dir
+/home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/test_concat.dir
+/home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/test_kleene.dir
+/home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/test_tp1.dir
+/home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/test_tp2.dir
+/home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/test_minimize.dir
+/home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/edit_cache.dir
+/home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/rebuild_cache.dir

@@ -6,8 +6,8 @@
 int main(int argc, char *argv[]) {
   printf("--- Test Union ---\n");
 
-  Automata AFND = readAutomatafromDot("TP2.dot");
-  Automata AFND2 = readAutomatafromDot("TP2.dot");
+  Automata AFND = readAutomatafromDot("AFND_TP2.dot");
+  Automata AFND2 = readAutomatafromDot("AFND_TP2.dot");
 
   printf("Union: \n");
   Automata u = unionA(AFND, AFND2);

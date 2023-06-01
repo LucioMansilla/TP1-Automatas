@@ -6,9 +6,9 @@
 int main(int argc, char *argv[]) {
   printf("--- Test Concat ---\n");
 
-  Automata AFND = readAutomatafromDot("TP2.dot");
- Automata AFND2 = readAutomatafromDot("TP2.dot");
-    
+  Automata AFND = readAutomatafromDot("AFND_TP2.dot");
+  Automata AFND2 = readAutomatafromDot("AFND_TP2.dot");
+
   printf("Concat: \n");
   Automata u = concat(AFND, AFND2);
   writeAutomataToDot(u, "concat.dot");

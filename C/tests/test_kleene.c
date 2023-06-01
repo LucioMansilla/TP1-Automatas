@@ -5,7 +5,7 @@
 
 int main(int argc, char *argv[]) {
   printf("--- Test Kleene ---\n");
-  Automata AFND = readAutomatafromDot("TP2.dot");
+  Automata AFND = readAutomatafromDot("AFND_TP2.dot");
   printf("Kleene: \n");
   Automata k = kleene_clousure(AFND);
   printAutomata(k);

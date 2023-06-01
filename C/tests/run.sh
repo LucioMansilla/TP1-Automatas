@@ -112,6 +112,6 @@ else
 fi
 
 
-
-
-echo "Tests finished. Check $LOGFILE for more information"
+echo ""
+echo "Tests finished!. Check $LOGFILE for more information"
+echo "Check tests folder for the .dot files generated"

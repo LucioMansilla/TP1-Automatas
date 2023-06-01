@@ -25,7 +25,8 @@ Automata renameStates(Automata automaton, int shift, List *new_k);
 Automata concat(Automata a, Automata b);
 Automata kleene_clousure(Automata automaton);
 Automata unionA(Automata automaton_1, Automata automaton_2);
-void quotient_set(Automata automaton);
+List_List *quotient_set(Automata automaton);
 void quotient_playground(Automata automaton);
+Automata minimize(Automata automaton);
 
 #endif

@@ -9,5 +9,5 @@ typedef struct {
 } Transition;
 
 Transition createTransition(int from, int symbol, List *to);
-
+void printTransition(Transition t);
 #endif

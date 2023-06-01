@@ -68,7 +68,6 @@ void add_list_list(List_List *ls, List *data) {
     ls->next->list = data;
     ls->next->next = NULL;
     ls->size = 1;
-    printf("entro\n");
     return;
   }
   List_List *cur = ls->next;
