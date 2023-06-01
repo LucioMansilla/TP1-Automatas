@@ -8,9 +8,6 @@ int main(int argc, char *argv[]) {
 
   Automata AFND = readAutomatafromDot("TP2.dot");
  Automata AFND2 = readAutomatafromDot("TP2.dot");
-  printAutomata(AFND);
-    printf("Now the other: \n");
-    printAutomata(AFND2);
     
   printf("Concat: \n");
   Automata u = concat(AFND, AFND2);

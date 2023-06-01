@@ -87,5 +87,31 @@ else
  echo "test_kleene failed"
 fi
 
+./exec/test_tp1 >> $LOGFILE
+if [ $? -eq 1 ]
+then
+ echo "test_tp1 passed"
+else
+ echo "test_tp1 failed"
+fi
+
+./exec/test_tp2 >> $LOGFILE
+if [ $? -eq 1 ]
+then
+ echo "test_tp2 passed"
+else
+ echo "test_tp2 failed"
+fi
+
+./exec/test_minimize >> $LOGFILE
+if [ $? -eq 1 ]
+then
+ echo "test_minimize passed"
+else
+ echo "test_minimize failed"
+fi
+
+
+
 
 echo "Tests finished. Check $LOGFILE for more information"

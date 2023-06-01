@@ -160,3 +160,65 @@ Final states: 6->NULL
 ---------------------
 
 --- Test Kleene Passed ---
+ -- Test TP1 -- 
+Original automata:-------Automata-------
+K: 0->1->2->3->NULL
+Alphabet: 49->50->NULL
+Delta: 
+From 0 with a to 1->NULL
+From 1 with a to 3->NULL
+From 1 with b to 2->1->NULL
+From 3 with a to 3->NULL
+From 3 with b to 3->NULL
+Initial state: 0
+Final states: 2->NULL
+---------------------
+T: 
+T[0]: 0->NULL
+T[1]: 1->NULL
+T[2]: Empty list
+T[3]: 3->NULL
+T[4]: 1->2->NULL
+The conversion from AFND to AFD has been completed.
+You can view the result in the file AFD_TP.dot
+Pertains: 0
+ -- Test TP1 passed -- 
+ -- Test TP2 -- 
+Kleene: 
+Union: 
+Minimize: 
+T: 
+T[0]: 0->8->1->14->9->7->2->15->NULL
+T[1]: Empty list
+T[2]: 3->10->NULL
+T[3]: 11->4->NULL
+T[4]: 5->12->7->2->14->9->15->NULL
+T[5]: 13->6->NULL
+ -- Test TP2 passed -- 
+T: 
+T[0]: 0->NULL
+T[1]: 1->NULL
+T[2]: Empty list
+T[3]: 2->NULL
+T[4]: 3->NULL
+T[5]: 4->NULL
+--- Test Minimize: ---
+Minimize: 
+-------Automata-------
+K: 4->3->2->1->0->NULL
+Alphabet: 0->1->NULL
+Delta: 
+From 0 with 0 to 4->NULL
+From 0 with 1 to 1->NULL
+From 1 with 0 to 1->NULL
+From 1 with 1 to 1->NULL
+From 2 with 0 to 3->NULL
+From 2 with 1 to 1->NULL
+From 3 with 0 to 1->NULL
+From 3 with 1 to 0->NULL
+From 4 with 0 to 1->NULL
+From 4 with 1 to 0->NULL
+Initial state: 2
+Final states: 4->NULL
+---------------------
+Test Minimize Passed
