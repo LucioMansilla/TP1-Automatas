@@ -9,6 +9,8 @@ In C, it has different tests.
 
 # Usage
 
+Here are some important details to keep in mind:
+
 ## Building
 
 Dependencies:
@@ -19,7 +21,6 @@ Dependencies:
 
 - In some cases you may need to install [g++](https://gcc.gnu.org/)
 
-Here are some important details to keep in mind:
 
 ## Important Notes:
 
