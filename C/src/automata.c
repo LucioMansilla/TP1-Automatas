@@ -329,6 +329,34 @@ List *get_final_state_minimize(Automata automaton, List_List *equiv_class) {
   return final_states;
 }
 
+void parse(char *str){
+
+}
+
+
+/*
+
+SD( S -> E # ) =  { ( a b c }
+SD( E -> T E' ) = { ( a b c }
+SD( E' -> | T E' ) = { | }
+SD( E' -> LAMBDA ) = { # ) }
+SD( T -> F T' )   = { ( a b c }
+SD( T' -> . F T' ) = { . }
+SD( T' -> LAMBDA ) = { | ) # }
+SD( F -> P F' ) = { ( a b c }
+SD( F' -> * ) =  { * }
+SD( F' -> LAMBDA ) = { . | ) # }
+SD( P -> ( E ) ) = { ( }
+SD( P -> L ) = { a b c }
+SD (L -> a) = {a}
+SD (L -> b) = {b}
+SD (L -> c) = {c}
+
+
+*/
+
+
+
 List_List *quotient_set(Automata automaton) {
   List_List *P = create_empty_list_list();
   List_List *P_prime = create_empty_list_list();
