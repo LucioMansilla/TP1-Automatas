@@ -2,28 +2,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct TestPair {
+    char *regex;
+    char *test_string;
+} TestPair;
 
 int main(void) {
-    char* tests[] = {
-        "(a.b)*|(b.c)#", // Expresión regular compleja
-        "a.b.c#",        // Concatenación de caracteres
-        "(a|b)#",        // Unión de caracteres
-        "a*#",           // Cierre de Kleene sobre un solo carácter
-        "(a.b)*#",       // Cierre de Kleene sobre una concatenación
-        "(a|b)*#",       // Cierre de Kleene sobre una unión
-        "(a*|b*)#",      // Cierre de Kleene en ambos lados de una unión
-        "((a.b)|c)#",    // Agrupación con paréntesis
-        "(a|b.c)#",      // Concatenación y unión juntas
-        "(a.b|c)#",      // Concatenación y unión juntas en otro orden
+    
+    TestPair tests[] = {
+        {"(a.b)*|(b.c)#", "abab"}, // Expresión regular compleja
+        {"a.b.c#", "abc"},         // Concatenación de caracteres
+        {"(a|b)#", "a"},           // Unión de caracteres
+        {"a*#", "aaaa"},           // Clausura de Kleene sobre un solo carácter
+        {"(a.b)*#", "abab"},       // Clausura de Kleene sobre una concatenación
+        {"(a|b)*#", "abab"},       // Clausura de Kleene sobre una unión
+        {"(a*|b*)#", "aaa"},       // Clausura de Kleene en ambos lados de una unión
+        {"((a.b)|c)#", "ab"},      // Agrupación con paréntesis
+        {"(a|b.c)#", "bc"},        // Concatenación y unión juntas
+        {"(a.b|c)#", "ab"},        // Concatenación y unión juntas en otro orden
     };
-    int numTests = sizeof(tests) / sizeof(char*);
 
-    for (int i = 0; i < numTests; i++) {
-        printf("Test %d\n", i + 1);
-        char * input = tests[i];
-        Automata a = parser(input);
+    int numTests = sizeof(tests) / sizeof(TestPair);
+    int test;
+    printf("--- Test Parser ---\n");
+    for (test = 0; test < numTests; test++) {
+        printf("Test %d\n", test + 1);
+        Automata a = parser(tests[test].regex);
+        print_automaton(a);
+        if (!belongs(a, tests[test].test_string)) break;
+
         printf("\n");
     }
-    printf("%d tests passed\n", numTests);
-    return 0;
+
+    if (test == numTests){
+        printf("\n--- Test Parser Passed ---\n");
+        return 1;
+    }
+    
+        printf("\n--- Test %d Failed ---\n", test);
+        return 0;
 }

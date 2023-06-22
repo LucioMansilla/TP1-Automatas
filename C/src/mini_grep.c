@@ -7,7 +7,6 @@
 char *input;
 int position = 0;
 
-
 Automata parser(char* regex){
     input = regex;
     position = 0;

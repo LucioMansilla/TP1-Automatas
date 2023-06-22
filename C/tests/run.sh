@@ -112,6 +112,23 @@ else
 fi
 
 
+./exec/test_parser >> $LOGFILE
+if [ $? -eq 1 ]
+then
+ echo "test_parser passed"
+else
+ echo "test_parser failed"
+fi
+
+./exec/test_mini_grep >> $LOGFILE
+if [ $? -eq 1 ]
+then
+ echo "test_mini_grep passed"
+else
+ echo "test_mini_grep failed"
+fi
+
+
 echo ""
 echo "Tests finished!. Check $LOGFILE for more information"
 echo "Check tests folder for the .dot files generated"

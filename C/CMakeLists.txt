@@ -66,4 +66,6 @@ add_executable(test_parser ${TESTS_DIR}/test_parser.c  ${SRC_DIR}/mini_grep.c ${
 target_include_directories(test_parser PUBLIC ${automatasTP_SOURCE_DIR}/src)
 set_target_properties(test_parser PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TESTS_EXEC}/)
 
-
+add_executable(test_mini_grep ${TESTS_DIR}/test_mini_grep.c  ${SRC_DIR}/mini_grep.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
+target_include_directories(test_mini_grep PUBLIC ${automatasTP_SOURCE_DIR}/src)
+set_target_properties(test_mini_grep PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TESTS_EXEC}/)
