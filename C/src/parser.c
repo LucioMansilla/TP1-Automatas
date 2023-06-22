@@ -1,13 +1,8 @@
-
-
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
-
-
 char *input;
 int position = 0;
-
 bool S();
 bool E();
 bool E_();
@@ -17,12 +12,7 @@ bool F();
 bool F_();
 bool P();
 bool L();
-
-
-int main(void){
-    return 0;
-}
-
+int main(void) { return 0; }
 bool accept(char c) {
     if (input[position] == c) {
         position++;
@@ -30,9 +20,6 @@ bool accept(char c) {
     }
     return false;
 }
-
-
-
 /*
 SD( S -> E # ) =  { ( a b c }
 SD( E -> T E' ) = { ( a b c }
@@ -50,6 +37,3 @@ SD (L -> a) = {a}
 SD (L -> b) = {b}
 SD (L -> c) = {c}
 */
-
-
-

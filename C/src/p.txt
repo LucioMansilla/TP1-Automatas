@@ -1,0 +1,112 @@
+
+SD( S -> E # ) =  { ( a b c }
+SD( E -> T E' ) = { ( a b c }
+SD( E' -> | T E' ) = { | }
+SD( E' -> LAMBDA ) = { # ) }
+SD( T -> F T' )   = { ( a b c }
+SD( T' -> . F T' ) = { . }
+SD( T' -> LAMBDA ) = { | ) # }
+SD( F -> P F' ) = { ( a b c }
+SD( F' -> * ) =  { * }
+SD( F' -> LAMBDA ) = { . | ) # }
+SD( P -> ( E ) ) = { ( }
+SD( P -> L ) = { a b c }
+SD (L -> a) = {a}
+SD (L -> b) = {b}
+SD (L -> c) = {c}
+
+
+
+SD (S -> P#) = { ( a b c }
+SD( P -> ( K )) = { ( } 
+SD( P -> L) = { a b c }
+SD( K -> L) = { a b c }
+SD (L -> a) = {a}
+SD (L -> b) = {b}
+SD (L -> c) = {c}
+
+---
+
+Test
+
+int main(void) {
+    char* tests[] = {
+        "(a.b)*|(b.c)#", // Expresión regular compleja
+        "a.b.c#",        // Concatenación de caracteres
+        "(a|b)#",        // Unión de caracteres
+        "a*#",           // Cierre de Kleene sobre un solo carácter
+        "(a.b)*#",       // Cierre de Kleene sobre una concatenación
+        "(a|b)*#",       // Cierre de Kleene sobre una unión
+        "(a*|b*)#",      // Cierre de Kleene en ambos lados de una unión
+        "((a.b)|c)#",    // Agrupación con paréntesis
+        "(a|b.c)#",      // Concatenación y unión juntas
+        "(a.b|c)#",      // Concatenación y unión juntas en otro orden
+    };
+    int numTests = sizeof(tests) / sizeof(char*);
+
+    for (int i = 0; i < numTests; i++) {
+        printf("Test %d\n", i + 1);
+        input = tests[i];
+        position = 0;
+        Automata a = S();
+        print_automaton(a);
+        printf("\n");
+    }
+    printf("%d tests passed\n", numTests);
+    return 0;
+}
+
+
+----------------------------
+
+
+int main(void) {
+    struct {
+        char* regex;
+        char* line;
+        bool expected;
+    } tests[] = {
+        {"a.b*", "ab", true},
+        {"a.b*", "abb", true},
+        {"a.b*", "abbb", true},
+        {"a.b*", "aab", true}, // 'ab' es una subcadena válida
+        {"a.b*", "ac", true}, // 'a' es una subcadena válida
+        {"(a.b)*", "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzab", true},
+        {"(a.b)*", "abab", true},
+        {"(a.b)*", "aba", true}, // 'ab' es una subcadena válida
+        {"(a|b)*", "a", true},
+        {"(a|b)*", "b", true},
+        {"(a|b)*", "c", false}, // '' (cadena vacía) es una subcadena válida
+        {"a*", "aaaa", true},
+        {"a*", "b", false},
+        {"0|1*","0",true} // '' (cadena vacía) es una subcadena válida
+    };
+    int numTests = sizeof(tests) / sizeof(tests[0]);
+
+    for (int i = 0; i < numTests; i++) {
+        bool result = minigrep(tests[i].regex, tests[i].line);
+        printf("Test %d: ", i + 1);
+        if (result == tests[i].expected) {
+            printf("PASSED\n");
+        } else {
+            printf("FAILED\n");
+        }
+    }
+    
+    return 0;
+}
+
+-----------------------------
+
+int pertains(Automata a, char *w) {
+  int i = 0;
+  int d = a.initialState;
+  while (i < strlen(w) && d != -1) {
+    if (a.delta[d][ord(w[i])].next == NULL)
+      return 0;
+    d = a.delta[d][ord(w[i])].next->data;
+       i++;
+  }
+
+  return contains(a.finalStates, d);
+}
