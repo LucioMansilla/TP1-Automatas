@@ -1,4 +1,4 @@
-#include "../libs/automata.h"
+#include "../libs/mini_grep.h"
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
@@ -6,43 +6,13 @@
 
 char *input;
 int position = 0;
-bool accept(char c);
-Automata L();
-Automata P();
-Automata F();
-Automata F_prime();
-Automata T();
-Automata T_prime();
-Automata E();
-Automata E_prime();
-Automata S();
-bool minigrep(char* regex, char* line);
-int main(void) {
-    char* tests[] = {
-        "(a.b)*|(b.c)#", // Expresión regular compleja
-        "a.b.c#",        // Concatenación de caracteres
-        "(a|b)#",        // Unión de caracteres
-        "a*#",           // Cierre de Kleene sobre un solo carácter
-        "(a.b)*#",       // Cierre de Kleene sobre una concatenación
-        "(a|b)*#",       // Cierre de Kleene sobre una unión
-        "(a*|b*)#",      // Cierre de Kleene en ambos lados de una unión
-        "((a.b)|c)#",    // Agrupación con paréntesis
-        "(a|b.c)#",      // Concatenación y unión juntas
-        "(a.b|c)#",      // Concatenación y unión juntas en otro orden
-    };
-    int numTests = sizeof(tests) / sizeof(char*);
 
-    for (int i = 0; i < numTests; i++) {
-        printf("Test %d\n", i + 1);
-        input = tests[i];
-        position = 0;
-        Automata a = S();
-        printf("\n");
-    }
-    printf("%d tests passed\n", numTests);
-    return 0;
+
+Automata parser(char* regex){
+    input = regex;
+    position = 0;
+    return S();
 }
-
 
 bool minigrep(char* regex, char* line) {
     int line_length = strlen(line);

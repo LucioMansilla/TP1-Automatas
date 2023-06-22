@@ -1,3 +1,4 @@
+/home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/parser.dir
 /home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/automata.dir
 /home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/test_afnd_to_afd.dir
 /home/luciom/Escritorio/TPs/TP-Automatas/C/bld/CMakeFiles/test_build_from_dot.dir

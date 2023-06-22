@@ -8,9 +8,6 @@ set(SRC_DIR ${automatasTP_SOURCE_DIR}/src)
 set(TESTS_EXEC ${automatasTP_SOURCE_DIR}/tests/exec)
 
 
-add_executable(parser  ${SRC_DIR}/main2.c)
-target_include_directories(parser PUBLIC ${automatasTP_SOURCE_DIR}/src)
-set_target_properties(parser PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${automatasTP_SOURCE_DIR}/src)
 
 add_executable(automata ${SRC_DIR}/main.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
 target_include_directories(automata PUBLIC ${automatasTP_SOURCE_DIR}/src)
@@ -63,5 +60,10 @@ set_target_properties(test_tp2 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TESTS_EXEC}
 add_executable(test_minimize ${TESTS_DIR}/test_minimize.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
 target_include_directories(test_minimize PUBLIC ${automatasTP_SOURCE_DIR}/src)
 set_target_properties(test_minimize PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TESTS_EXEC}/)
+
+
+add_executable(test_parser ${TESTS_DIR}/test_parser.c  ${SRC_DIR}/mini_grep.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
+target_include_directories(test_parser PUBLIC ${automatasTP_SOURCE_DIR}/src)
+set_target_properties(test_parser PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TESTS_EXEC}/)
 
 

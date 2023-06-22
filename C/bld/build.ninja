@@ -41,6 +41,38 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /home/luciom/Escritorio/TPs/TP-Automatas/C/bld/
 # =============================================================================
+# Object build statements for EXECUTABLE target parser
+
+
+#############################################
+# Order-only phony target for parser
+
+build cmake_object_order_depends_target_parser: phony || CMakeFiles/parser.dir
+
+build CMakeFiles/parser.dir/src/playground.c.o: C_COMPILER__parser_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/playground.c || cmake_object_order_depends_target_parser
+  DEP_FILE = CMakeFiles/parser.dir/src/playground.c.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu99
+  INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
+  OBJECT_DIR = CMakeFiles/parser.dir
+  OBJECT_FILE_DIR = CMakeFiles/parser.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target parser
+
+
+#############################################
+# Link the executable /home/luciom/Escritorio/TPs/TP-Automatas/C/src/parser
+
+build /home/luciom/Escritorio/TPs/TP-Automatas/C/src/parser: C_EXECUTABLE_LINKER__parser_RELEASE CMakeFiles/parser.dir/src/playground.c.o
+  FLAGS = -O3 -DNDEBUG
+  OBJECT_DIR = CMakeFiles/parser.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/src/parser
+  TARGET_PDB = parser.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target automata
 
 
@@ -49,14 +81,19 @@ cmake_ninja_workdir = /home/luciom/Escritorio/TPs/TP-Automatas/C/bld/
 
 build cmake_object_order_depends_target_automata: phony || CMakeFiles/automata.dir
 
+build CMakeFiles/automata.dir/src/main.c.o: C_COMPILER__automata_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/main.c || cmake_object_order_depends_target_automata
+  DEP_FILE = CMakeFiles/automata.dir/src/main.c.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu99
+  INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
+  OBJECT_DIR = CMakeFiles/automata.dir
+  OBJECT_FILE_DIR = CMakeFiles/automata.dir/src
+
 build CMakeFiles/automata.dir/src/automata.c.o: C_COMPILER__automata_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.c || cmake_object_order_depends_target_automata
   DEP_FILE = CMakeFiles/automata.dir/src/automata.c.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/automata.dir
   OBJECT_FILE_DIR = CMakeFiles/automata.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/automata.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.pdb
 
 build CMakeFiles/automata.dir/src/utils.c.o: C_COMPILER__automata_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/utils.c || cmake_object_order_depends_target_automata
   DEP_FILE = CMakeFiles/automata.dir/src/utils.c.o.d
@@ -64,8 +101,6 @@ build CMakeFiles/automata.dir/src/utils.c.o: C_COMPILER__automata_unscanned_RELE
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/automata.dir
   OBJECT_FILE_DIR = CMakeFiles/automata.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/automata.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.pdb
 
 build CMakeFiles/automata.dir/src/transition.c.o: C_COMPILER__automata_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/transition.c || cmake_object_order_depends_target_automata
   DEP_FILE = CMakeFiles/automata.dir/src/transition.c.o.d
@@ -73,8 +108,6 @@ build CMakeFiles/automata.dir/src/transition.c.o: C_COMPILER__automata_unscanned
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/automata.dir
   OBJECT_FILE_DIR = CMakeFiles/automata.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/automata.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.pdb
 
 build CMakeFiles/automata.dir/src/linked_list.c.o: C_COMPILER__automata_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/linked_list.c || cmake_object_order_depends_target_automata
   DEP_FILE = CMakeFiles/automata.dir/src/linked_list.c.o.d
@@ -82,8 +115,6 @@ build CMakeFiles/automata.dir/src/linked_list.c.o: C_COMPILER__automata_unscanne
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/automata.dir
   OBJECT_FILE_DIR = CMakeFiles/automata.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/automata.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.pdb
 
 
 # =============================================================================
@@ -93,14 +124,13 @@ build CMakeFiles/automata.dir/src/linked_list.c.o: C_COMPILER__automata_unscanne
 #############################################
 # Link the executable /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata
 
-build /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata: C_EXECUTABLE_LINKER__automata_RELEASE CMakeFiles/automata.dir/src/automata.c.o CMakeFiles/automata.dir/src/utils.c.o CMakeFiles/automata.dir/src/transition.c.o CMakeFiles/automata.dir/src/linked_list.c.o
+build /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata: C_EXECUTABLE_LINKER__automata_RELEASE CMakeFiles/automata.dir/src/main.c.o CMakeFiles/automata.dir/src/automata.c.o CMakeFiles/automata.dir/src/utils.c.o CMakeFiles/automata.dir/src/transition.c.o CMakeFiles/automata.dir/src/linked_list.c.o
   FLAGS = -O3 -DNDEBUG
   OBJECT_DIR = CMakeFiles/automata.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/automata.dir/
   TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.pdb
+  TARGET_PDB = automata.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test_afnd_to_afd
@@ -117,8 +147,6 @@ build CMakeFiles/test_afnd_to_afd.dir/tests/test_afnd_to_afd.c.o: C_COMPILER__te
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_afnd_to_afd.dir
   OBJECT_FILE_DIR = CMakeFiles/test_afnd_to_afd.dir/tests
-  TARGET_COMPILE_PDB = CMakeFiles/test_afnd_to_afd.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_afnd_to_afd.pdb
 
 build CMakeFiles/test_afnd_to_afd.dir/src/automata.c.o: C_COMPILER__test_afnd_to_afd_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.c || cmake_object_order_depends_target_test_afnd_to_afd
   DEP_FILE = CMakeFiles/test_afnd_to_afd.dir/src/automata.c.o.d
@@ -126,8 +154,6 @@ build CMakeFiles/test_afnd_to_afd.dir/src/automata.c.o: C_COMPILER__test_afnd_to
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_afnd_to_afd.dir
   OBJECT_FILE_DIR = CMakeFiles/test_afnd_to_afd.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_afnd_to_afd.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_afnd_to_afd.pdb
 
 build CMakeFiles/test_afnd_to_afd.dir/src/utils.c.o: C_COMPILER__test_afnd_to_afd_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/utils.c || cmake_object_order_depends_target_test_afnd_to_afd
   DEP_FILE = CMakeFiles/test_afnd_to_afd.dir/src/utils.c.o.d
@@ -135,8 +161,6 @@ build CMakeFiles/test_afnd_to_afd.dir/src/utils.c.o: C_COMPILER__test_afnd_to_af
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_afnd_to_afd.dir
   OBJECT_FILE_DIR = CMakeFiles/test_afnd_to_afd.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_afnd_to_afd.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_afnd_to_afd.pdb
 
 build CMakeFiles/test_afnd_to_afd.dir/src/transition.c.o: C_COMPILER__test_afnd_to_afd_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/transition.c || cmake_object_order_depends_target_test_afnd_to_afd
   DEP_FILE = CMakeFiles/test_afnd_to_afd.dir/src/transition.c.o.d
@@ -144,8 +168,6 @@ build CMakeFiles/test_afnd_to_afd.dir/src/transition.c.o: C_COMPILER__test_afnd_
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_afnd_to_afd.dir
   OBJECT_FILE_DIR = CMakeFiles/test_afnd_to_afd.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_afnd_to_afd.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_afnd_to_afd.pdb
 
 build CMakeFiles/test_afnd_to_afd.dir/src/linked_list.c.o: C_COMPILER__test_afnd_to_afd_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/linked_list.c || cmake_object_order_depends_target_test_afnd_to_afd
   DEP_FILE = CMakeFiles/test_afnd_to_afd.dir/src/linked_list.c.o.d
@@ -153,8 +175,6 @@ build CMakeFiles/test_afnd_to_afd.dir/src/linked_list.c.o: C_COMPILER__test_afnd
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_afnd_to_afd.dir
   OBJECT_FILE_DIR = CMakeFiles/test_afnd_to_afd.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_afnd_to_afd.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_afnd_to_afd.pdb
 
 
 # =============================================================================
@@ -169,9 +189,8 @@ build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_afnd_to_afd: C_
   OBJECT_DIR = CMakeFiles/test_afnd_to_afd.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/test_afnd_to_afd.dir/
   TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_afnd_to_afd
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_afnd_to_afd.pdb
+  TARGET_PDB = test_afnd_to_afd.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test_build_from_dot
@@ -188,8 +207,6 @@ build CMakeFiles/test_build_from_dot.dir/tests/test_build_from_dot.c.o: C_COMPIL
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_build_from_dot.dir
   OBJECT_FILE_DIR = CMakeFiles/test_build_from_dot.dir/tests
-  TARGET_COMPILE_PDB = CMakeFiles/test_build_from_dot.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build_from_dot.pdb
 
 build CMakeFiles/test_build_from_dot.dir/src/automata.c.o: C_COMPILER__test_build_from_dot_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.c || cmake_object_order_depends_target_test_build_from_dot
   DEP_FILE = CMakeFiles/test_build_from_dot.dir/src/automata.c.o.d
@@ -197,8 +214,6 @@ build CMakeFiles/test_build_from_dot.dir/src/automata.c.o: C_COMPILER__test_buil
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_build_from_dot.dir
   OBJECT_FILE_DIR = CMakeFiles/test_build_from_dot.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_build_from_dot.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build_from_dot.pdb
 
 build CMakeFiles/test_build_from_dot.dir/src/utils.c.o: C_COMPILER__test_build_from_dot_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/utils.c || cmake_object_order_depends_target_test_build_from_dot
   DEP_FILE = CMakeFiles/test_build_from_dot.dir/src/utils.c.o.d
@@ -206,8 +221,6 @@ build CMakeFiles/test_build_from_dot.dir/src/utils.c.o: C_COMPILER__test_build_f
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_build_from_dot.dir
   OBJECT_FILE_DIR = CMakeFiles/test_build_from_dot.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_build_from_dot.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build_from_dot.pdb
 
 build CMakeFiles/test_build_from_dot.dir/src/transition.c.o: C_COMPILER__test_build_from_dot_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/transition.c || cmake_object_order_depends_target_test_build_from_dot
   DEP_FILE = CMakeFiles/test_build_from_dot.dir/src/transition.c.o.d
@@ -215,8 +228,6 @@ build CMakeFiles/test_build_from_dot.dir/src/transition.c.o: C_COMPILER__test_bu
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_build_from_dot.dir
   OBJECT_FILE_DIR = CMakeFiles/test_build_from_dot.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_build_from_dot.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build_from_dot.pdb
 
 build CMakeFiles/test_build_from_dot.dir/src/linked_list.c.o: C_COMPILER__test_build_from_dot_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/linked_list.c || cmake_object_order_depends_target_test_build_from_dot
   DEP_FILE = CMakeFiles/test_build_from_dot.dir/src/linked_list.c.o.d
@@ -224,8 +235,6 @@ build CMakeFiles/test_build_from_dot.dir/src/linked_list.c.o: C_COMPILER__test_b
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_build_from_dot.dir
   OBJECT_FILE_DIR = CMakeFiles/test_build_from_dot.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_build_from_dot.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build_from_dot.pdb
 
 
 # =============================================================================
@@ -240,9 +249,8 @@ build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build_from_dot:
   OBJECT_DIR = CMakeFiles/test_build_from_dot.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/test_build_from_dot.dir/
   TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build_from_dot
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build_from_dot.pdb
+  TARGET_PDB = test_build_from_dot.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test_build
@@ -259,8 +267,6 @@ build CMakeFiles/test_build.dir/tests/test_build.c.o: C_COMPILER__test_build_uns
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_build.dir
   OBJECT_FILE_DIR = CMakeFiles/test_build.dir/tests
-  TARGET_COMPILE_PDB = CMakeFiles/test_build.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build.pdb
 
 build CMakeFiles/test_build.dir/src/automata.c.o: C_COMPILER__test_build_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.c || cmake_object_order_depends_target_test_build
   DEP_FILE = CMakeFiles/test_build.dir/src/automata.c.o.d
@@ -268,8 +274,6 @@ build CMakeFiles/test_build.dir/src/automata.c.o: C_COMPILER__test_build_unscann
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_build.dir
   OBJECT_FILE_DIR = CMakeFiles/test_build.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_build.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build.pdb
 
 build CMakeFiles/test_build.dir/src/utils.c.o: C_COMPILER__test_build_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/utils.c || cmake_object_order_depends_target_test_build
   DEP_FILE = CMakeFiles/test_build.dir/src/utils.c.o.d
@@ -277,8 +281,6 @@ build CMakeFiles/test_build.dir/src/utils.c.o: C_COMPILER__test_build_unscanned_
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_build.dir
   OBJECT_FILE_DIR = CMakeFiles/test_build.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_build.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build.pdb
 
 build CMakeFiles/test_build.dir/src/transition.c.o: C_COMPILER__test_build_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/transition.c || cmake_object_order_depends_target_test_build
   DEP_FILE = CMakeFiles/test_build.dir/src/transition.c.o.d
@@ -286,8 +288,6 @@ build CMakeFiles/test_build.dir/src/transition.c.o: C_COMPILER__test_build_unsca
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_build.dir
   OBJECT_FILE_DIR = CMakeFiles/test_build.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_build.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build.pdb
 
 build CMakeFiles/test_build.dir/src/linked_list.c.o: C_COMPILER__test_build_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/linked_list.c || cmake_object_order_depends_target_test_build
   DEP_FILE = CMakeFiles/test_build.dir/src/linked_list.c.o.d
@@ -295,8 +295,6 @@ build CMakeFiles/test_build.dir/src/linked_list.c.o: C_COMPILER__test_build_unsc
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_build.dir
   OBJECT_FILE_DIR = CMakeFiles/test_build.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_build.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build.pdb
 
 
 # =============================================================================
@@ -311,9 +309,8 @@ build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build: C_EXECUT
   OBJECT_DIR = CMakeFiles/test_build.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/test_build.dir/
   TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build.pdb
+  TARGET_PDB = test_build.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test_strings_belongs
@@ -330,8 +327,6 @@ build CMakeFiles/test_strings_belongs.dir/tests/test_strings_belongs.c.o: C_COMP
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_strings_belongs.dir
   OBJECT_FILE_DIR = CMakeFiles/test_strings_belongs.dir/tests
-  TARGET_COMPILE_PDB = CMakeFiles/test_strings_belongs.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs.pdb
 
 build CMakeFiles/test_strings_belongs.dir/src/automata.c.o: C_COMPILER__test_strings_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.c || cmake_object_order_depends_target_test_strings_belongs
   DEP_FILE = CMakeFiles/test_strings_belongs.dir/src/automata.c.o.d
@@ -339,8 +334,6 @@ build CMakeFiles/test_strings_belongs.dir/src/automata.c.o: C_COMPILER__test_str
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_strings_belongs.dir
   OBJECT_FILE_DIR = CMakeFiles/test_strings_belongs.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_strings_belongs.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs.pdb
 
 build CMakeFiles/test_strings_belongs.dir/src/utils.c.o: C_COMPILER__test_strings_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/utils.c || cmake_object_order_depends_target_test_strings_belongs
   DEP_FILE = CMakeFiles/test_strings_belongs.dir/src/utils.c.o.d
@@ -348,8 +341,6 @@ build CMakeFiles/test_strings_belongs.dir/src/utils.c.o: C_COMPILER__test_string
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_strings_belongs.dir
   OBJECT_FILE_DIR = CMakeFiles/test_strings_belongs.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_strings_belongs.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs.pdb
 
 build CMakeFiles/test_strings_belongs.dir/src/transition.c.o: C_COMPILER__test_strings_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/transition.c || cmake_object_order_depends_target_test_strings_belongs
   DEP_FILE = CMakeFiles/test_strings_belongs.dir/src/transition.c.o.d
@@ -357,8 +348,6 @@ build CMakeFiles/test_strings_belongs.dir/src/transition.c.o: C_COMPILER__test_s
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_strings_belongs.dir
   OBJECT_FILE_DIR = CMakeFiles/test_strings_belongs.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_strings_belongs.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs.pdb
 
 build CMakeFiles/test_strings_belongs.dir/src/linked_list.c.o: C_COMPILER__test_strings_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/linked_list.c || cmake_object_order_depends_target_test_strings_belongs
   DEP_FILE = CMakeFiles/test_strings_belongs.dir/src/linked_list.c.o.d
@@ -366,8 +355,6 @@ build CMakeFiles/test_strings_belongs.dir/src/linked_list.c.o: C_COMPILER__test_
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_strings_belongs.dir
   OBJECT_FILE_DIR = CMakeFiles/test_strings_belongs.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_strings_belongs.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs.pdb
 
 
 # =============================================================================
@@ -382,9 +369,8 @@ build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs
   OBJECT_DIR = CMakeFiles/test_strings_belongs.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/test_strings_belongs.dir/
   TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs.pdb
+  TARGET_PDB = test_strings_belongs.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test_belongs
@@ -401,8 +387,6 @@ build CMakeFiles/test_belongs.dir/tests/test_belongs.c.o: C_COMPILER__test_belon
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_belongs.dir
   OBJECT_FILE_DIR = CMakeFiles/test_belongs.dir/tests
-  TARGET_COMPILE_PDB = CMakeFiles/test_belongs.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs.pdb
 
 build CMakeFiles/test_belongs.dir/src/automata.c.o: C_COMPILER__test_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.c || cmake_object_order_depends_target_test_belongs
   DEP_FILE = CMakeFiles/test_belongs.dir/src/automata.c.o.d
@@ -410,8 +394,6 @@ build CMakeFiles/test_belongs.dir/src/automata.c.o: C_COMPILER__test_belongs_uns
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_belongs.dir
   OBJECT_FILE_DIR = CMakeFiles/test_belongs.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_belongs.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs.pdb
 
 build CMakeFiles/test_belongs.dir/src/utils.c.o: C_COMPILER__test_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/utils.c || cmake_object_order_depends_target_test_belongs
   DEP_FILE = CMakeFiles/test_belongs.dir/src/utils.c.o.d
@@ -419,8 +401,6 @@ build CMakeFiles/test_belongs.dir/src/utils.c.o: C_COMPILER__test_belongs_unscan
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_belongs.dir
   OBJECT_FILE_DIR = CMakeFiles/test_belongs.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_belongs.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs.pdb
 
 build CMakeFiles/test_belongs.dir/src/transition.c.o: C_COMPILER__test_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/transition.c || cmake_object_order_depends_target_test_belongs
   DEP_FILE = CMakeFiles/test_belongs.dir/src/transition.c.o.d
@@ -428,8 +408,6 @@ build CMakeFiles/test_belongs.dir/src/transition.c.o: C_COMPILER__test_belongs_u
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_belongs.dir
   OBJECT_FILE_DIR = CMakeFiles/test_belongs.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_belongs.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs.pdb
 
 build CMakeFiles/test_belongs.dir/src/linked_list.c.o: C_COMPILER__test_belongs_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/linked_list.c || cmake_object_order_depends_target_test_belongs
   DEP_FILE = CMakeFiles/test_belongs.dir/src/linked_list.c.o.d
@@ -437,8 +415,6 @@ build CMakeFiles/test_belongs.dir/src/linked_list.c.o: C_COMPILER__test_belongs_
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_belongs.dir
   OBJECT_FILE_DIR = CMakeFiles/test_belongs.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_belongs.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs.pdb
 
 
 # =============================================================================
@@ -453,9 +429,8 @@ build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs: C_EXEC
   OBJECT_DIR = CMakeFiles/test_belongs.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/test_belongs.dir/
   TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs.pdb
+  TARGET_PDB = test_belongs.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test_read_and_write
@@ -472,8 +447,6 @@ build CMakeFiles/test_read_and_write.dir/tests/test_read_and_write.c.o: C_COMPIL
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_read_and_write.dir
   OBJECT_FILE_DIR = CMakeFiles/test_read_and_write.dir/tests
-  TARGET_COMPILE_PDB = CMakeFiles/test_read_and_write.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_read_and_write.pdb
 
 build CMakeFiles/test_read_and_write.dir/src/automata.c.o: C_COMPILER__test_read_and_write_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.c || cmake_object_order_depends_target_test_read_and_write
   DEP_FILE = CMakeFiles/test_read_and_write.dir/src/automata.c.o.d
@@ -481,8 +454,6 @@ build CMakeFiles/test_read_and_write.dir/src/automata.c.o: C_COMPILER__test_read
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_read_and_write.dir
   OBJECT_FILE_DIR = CMakeFiles/test_read_and_write.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_read_and_write.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_read_and_write.pdb
 
 build CMakeFiles/test_read_and_write.dir/src/utils.c.o: C_COMPILER__test_read_and_write_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/utils.c || cmake_object_order_depends_target_test_read_and_write
   DEP_FILE = CMakeFiles/test_read_and_write.dir/src/utils.c.o.d
@@ -490,8 +461,6 @@ build CMakeFiles/test_read_and_write.dir/src/utils.c.o: C_COMPILER__test_read_an
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_read_and_write.dir
   OBJECT_FILE_DIR = CMakeFiles/test_read_and_write.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_read_and_write.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_read_and_write.pdb
 
 build CMakeFiles/test_read_and_write.dir/src/transition.c.o: C_COMPILER__test_read_and_write_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/transition.c || cmake_object_order_depends_target_test_read_and_write
   DEP_FILE = CMakeFiles/test_read_and_write.dir/src/transition.c.o.d
@@ -499,8 +468,6 @@ build CMakeFiles/test_read_and_write.dir/src/transition.c.o: C_COMPILER__test_re
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_read_and_write.dir
   OBJECT_FILE_DIR = CMakeFiles/test_read_and_write.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_read_and_write.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_read_and_write.pdb
 
 build CMakeFiles/test_read_and_write.dir/src/linked_list.c.o: C_COMPILER__test_read_and_write_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/linked_list.c || cmake_object_order_depends_target_test_read_and_write
   DEP_FILE = CMakeFiles/test_read_and_write.dir/src/linked_list.c.o.d
@@ -508,8 +475,6 @@ build CMakeFiles/test_read_and_write.dir/src/linked_list.c.o: C_COMPILER__test_r
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_read_and_write.dir
   OBJECT_FILE_DIR = CMakeFiles/test_read_and_write.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_read_and_write.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_read_and_write.pdb
 
 
 # =============================================================================
@@ -524,9 +489,8 @@ build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_read_and_write:
   OBJECT_DIR = CMakeFiles/test_read_and_write.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/test_read_and_write.dir/
   TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_read_and_write
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_read_and_write.pdb
+  TARGET_PDB = test_read_and_write.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test_union
@@ -543,8 +507,6 @@ build CMakeFiles/test_union.dir/tests/test_union.c.o: C_COMPILER__test_union_uns
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_union.dir
   OBJECT_FILE_DIR = CMakeFiles/test_union.dir/tests
-  TARGET_COMPILE_PDB = CMakeFiles/test_union.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_union.pdb
 
 build CMakeFiles/test_union.dir/src/automata.c.o: C_COMPILER__test_union_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.c || cmake_object_order_depends_target_test_union
   DEP_FILE = CMakeFiles/test_union.dir/src/automata.c.o.d
@@ -552,8 +514,6 @@ build CMakeFiles/test_union.dir/src/automata.c.o: C_COMPILER__test_union_unscann
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_union.dir
   OBJECT_FILE_DIR = CMakeFiles/test_union.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_union.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_union.pdb
 
 build CMakeFiles/test_union.dir/src/utils.c.o: C_COMPILER__test_union_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/utils.c || cmake_object_order_depends_target_test_union
   DEP_FILE = CMakeFiles/test_union.dir/src/utils.c.o.d
@@ -561,8 +521,6 @@ build CMakeFiles/test_union.dir/src/utils.c.o: C_COMPILER__test_union_unscanned_
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_union.dir
   OBJECT_FILE_DIR = CMakeFiles/test_union.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_union.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_union.pdb
 
 build CMakeFiles/test_union.dir/src/transition.c.o: C_COMPILER__test_union_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/transition.c || cmake_object_order_depends_target_test_union
   DEP_FILE = CMakeFiles/test_union.dir/src/transition.c.o.d
@@ -570,8 +528,6 @@ build CMakeFiles/test_union.dir/src/transition.c.o: C_COMPILER__test_union_unsca
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_union.dir
   OBJECT_FILE_DIR = CMakeFiles/test_union.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_union.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_union.pdb
 
 build CMakeFiles/test_union.dir/src/linked_list.c.o: C_COMPILER__test_union_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/linked_list.c || cmake_object_order_depends_target_test_union
   DEP_FILE = CMakeFiles/test_union.dir/src/linked_list.c.o.d
@@ -579,8 +535,6 @@ build CMakeFiles/test_union.dir/src/linked_list.c.o: C_COMPILER__test_union_unsc
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_union.dir
   OBJECT_FILE_DIR = CMakeFiles/test_union.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_union.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_union.pdb
 
 
 # =============================================================================
@@ -595,9 +549,8 @@ build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_union: C_EXECUT
   OBJECT_DIR = CMakeFiles/test_union.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/test_union.dir/
   TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_union
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_union.pdb
+  TARGET_PDB = test_union.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test_concat
@@ -614,8 +567,6 @@ build CMakeFiles/test_concat.dir/tests/test_concat.c.o: C_COMPILER__test_concat_
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_concat.dir
   OBJECT_FILE_DIR = CMakeFiles/test_concat.dir/tests
-  TARGET_COMPILE_PDB = CMakeFiles/test_concat.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_concat.pdb
 
 build CMakeFiles/test_concat.dir/src/automata.c.o: C_COMPILER__test_concat_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.c || cmake_object_order_depends_target_test_concat
   DEP_FILE = CMakeFiles/test_concat.dir/src/automata.c.o.d
@@ -623,8 +574,6 @@ build CMakeFiles/test_concat.dir/src/automata.c.o: C_COMPILER__test_concat_unsca
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_concat.dir
   OBJECT_FILE_DIR = CMakeFiles/test_concat.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_concat.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_concat.pdb
 
 build CMakeFiles/test_concat.dir/src/utils.c.o: C_COMPILER__test_concat_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/utils.c || cmake_object_order_depends_target_test_concat
   DEP_FILE = CMakeFiles/test_concat.dir/src/utils.c.o.d
@@ -632,8 +581,6 @@ build CMakeFiles/test_concat.dir/src/utils.c.o: C_COMPILER__test_concat_unscanne
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_concat.dir
   OBJECT_FILE_DIR = CMakeFiles/test_concat.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_concat.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_concat.pdb
 
 build CMakeFiles/test_concat.dir/src/transition.c.o: C_COMPILER__test_concat_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/transition.c || cmake_object_order_depends_target_test_concat
   DEP_FILE = CMakeFiles/test_concat.dir/src/transition.c.o.d
@@ -641,8 +588,6 @@ build CMakeFiles/test_concat.dir/src/transition.c.o: C_COMPILER__test_concat_uns
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_concat.dir
   OBJECT_FILE_DIR = CMakeFiles/test_concat.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_concat.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_concat.pdb
 
 build CMakeFiles/test_concat.dir/src/linked_list.c.o: C_COMPILER__test_concat_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/linked_list.c || cmake_object_order_depends_target_test_concat
   DEP_FILE = CMakeFiles/test_concat.dir/src/linked_list.c.o.d
@@ -650,8 +595,6 @@ build CMakeFiles/test_concat.dir/src/linked_list.c.o: C_COMPILER__test_concat_un
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_concat.dir
   OBJECT_FILE_DIR = CMakeFiles/test_concat.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_concat.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_concat.pdb
 
 
 # =============================================================================
@@ -666,9 +609,8 @@ build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_concat: C_EXECU
   OBJECT_DIR = CMakeFiles/test_concat.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/test_concat.dir/
   TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_concat
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_concat.pdb
+  TARGET_PDB = test_concat.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test_kleene
@@ -685,8 +627,6 @@ build CMakeFiles/test_kleene.dir/tests/test_kleene.c.o: C_COMPILER__test_kleene_
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_kleene.dir
   OBJECT_FILE_DIR = CMakeFiles/test_kleene.dir/tests
-  TARGET_COMPILE_PDB = CMakeFiles/test_kleene.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_kleene.pdb
 
 build CMakeFiles/test_kleene.dir/src/automata.c.o: C_COMPILER__test_kleene_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.c || cmake_object_order_depends_target_test_kleene
   DEP_FILE = CMakeFiles/test_kleene.dir/src/automata.c.o.d
@@ -694,8 +634,6 @@ build CMakeFiles/test_kleene.dir/src/automata.c.o: C_COMPILER__test_kleene_unsca
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_kleene.dir
   OBJECT_FILE_DIR = CMakeFiles/test_kleene.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_kleene.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_kleene.pdb
 
 build CMakeFiles/test_kleene.dir/src/utils.c.o: C_COMPILER__test_kleene_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/utils.c || cmake_object_order_depends_target_test_kleene
   DEP_FILE = CMakeFiles/test_kleene.dir/src/utils.c.o.d
@@ -703,8 +641,6 @@ build CMakeFiles/test_kleene.dir/src/utils.c.o: C_COMPILER__test_kleene_unscanne
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_kleene.dir
   OBJECT_FILE_DIR = CMakeFiles/test_kleene.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_kleene.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_kleene.pdb
 
 build CMakeFiles/test_kleene.dir/src/transition.c.o: C_COMPILER__test_kleene_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/transition.c || cmake_object_order_depends_target_test_kleene
   DEP_FILE = CMakeFiles/test_kleene.dir/src/transition.c.o.d
@@ -712,8 +648,6 @@ build CMakeFiles/test_kleene.dir/src/transition.c.o: C_COMPILER__test_kleene_uns
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_kleene.dir
   OBJECT_FILE_DIR = CMakeFiles/test_kleene.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_kleene.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_kleene.pdb
 
 build CMakeFiles/test_kleene.dir/src/linked_list.c.o: C_COMPILER__test_kleene_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/linked_list.c || cmake_object_order_depends_target_test_kleene
   DEP_FILE = CMakeFiles/test_kleene.dir/src/linked_list.c.o.d
@@ -721,8 +655,6 @@ build CMakeFiles/test_kleene.dir/src/linked_list.c.o: C_COMPILER__test_kleene_un
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_kleene.dir
   OBJECT_FILE_DIR = CMakeFiles/test_kleene.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_kleene.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_kleene.pdb
 
 
 # =============================================================================
@@ -737,9 +669,8 @@ build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_kleene: C_EXECU
   OBJECT_DIR = CMakeFiles/test_kleene.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/test_kleene.dir/
   TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_kleene
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_kleene.pdb
+  TARGET_PDB = test_kleene.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test_tp1
@@ -756,8 +687,6 @@ build CMakeFiles/test_tp1.dir/tests/test_tp1.c.o: C_COMPILER__test_tp1_unscanned
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_tp1.dir
   OBJECT_FILE_DIR = CMakeFiles/test_tp1.dir/tests
-  TARGET_COMPILE_PDB = CMakeFiles/test_tp1.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp1.pdb
 
 build CMakeFiles/test_tp1.dir/src/automata.c.o: C_COMPILER__test_tp1_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.c || cmake_object_order_depends_target_test_tp1
   DEP_FILE = CMakeFiles/test_tp1.dir/src/automata.c.o.d
@@ -765,8 +694,6 @@ build CMakeFiles/test_tp1.dir/src/automata.c.o: C_COMPILER__test_tp1_unscanned_R
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_tp1.dir
   OBJECT_FILE_DIR = CMakeFiles/test_tp1.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_tp1.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp1.pdb
 
 build CMakeFiles/test_tp1.dir/src/utils.c.o: C_COMPILER__test_tp1_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/utils.c || cmake_object_order_depends_target_test_tp1
   DEP_FILE = CMakeFiles/test_tp1.dir/src/utils.c.o.d
@@ -774,8 +701,6 @@ build CMakeFiles/test_tp1.dir/src/utils.c.o: C_COMPILER__test_tp1_unscanned_RELE
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_tp1.dir
   OBJECT_FILE_DIR = CMakeFiles/test_tp1.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_tp1.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp1.pdb
 
 build CMakeFiles/test_tp1.dir/src/transition.c.o: C_COMPILER__test_tp1_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/transition.c || cmake_object_order_depends_target_test_tp1
   DEP_FILE = CMakeFiles/test_tp1.dir/src/transition.c.o.d
@@ -783,8 +708,6 @@ build CMakeFiles/test_tp1.dir/src/transition.c.o: C_COMPILER__test_tp1_unscanned
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_tp1.dir
   OBJECT_FILE_DIR = CMakeFiles/test_tp1.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_tp1.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp1.pdb
 
 build CMakeFiles/test_tp1.dir/src/linked_list.c.o: C_COMPILER__test_tp1_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/linked_list.c || cmake_object_order_depends_target_test_tp1
   DEP_FILE = CMakeFiles/test_tp1.dir/src/linked_list.c.o.d
@@ -792,8 +715,6 @@ build CMakeFiles/test_tp1.dir/src/linked_list.c.o: C_COMPILER__test_tp1_unscanne
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_tp1.dir
   OBJECT_FILE_DIR = CMakeFiles/test_tp1.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_tp1.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp1.pdb
 
 
 # =============================================================================
@@ -808,9 +729,8 @@ build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp1: C_EXECUTAB
   OBJECT_DIR = CMakeFiles/test_tp1.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/test_tp1.dir/
   TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp1
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp1.pdb
+  TARGET_PDB = test_tp1.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test_tp2
@@ -827,8 +747,6 @@ build CMakeFiles/test_tp2.dir/tests/test_tp2.c.o: C_COMPILER__test_tp2_unscanned
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_tp2.dir
   OBJECT_FILE_DIR = CMakeFiles/test_tp2.dir/tests
-  TARGET_COMPILE_PDB = CMakeFiles/test_tp2.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp2.pdb
 
 build CMakeFiles/test_tp2.dir/src/automata.c.o: C_COMPILER__test_tp2_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.c || cmake_object_order_depends_target_test_tp2
   DEP_FILE = CMakeFiles/test_tp2.dir/src/automata.c.o.d
@@ -836,8 +754,6 @@ build CMakeFiles/test_tp2.dir/src/automata.c.o: C_COMPILER__test_tp2_unscanned_R
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_tp2.dir
   OBJECT_FILE_DIR = CMakeFiles/test_tp2.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_tp2.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp2.pdb
 
 build CMakeFiles/test_tp2.dir/src/utils.c.o: C_COMPILER__test_tp2_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/utils.c || cmake_object_order_depends_target_test_tp2
   DEP_FILE = CMakeFiles/test_tp2.dir/src/utils.c.o.d
@@ -845,8 +761,6 @@ build CMakeFiles/test_tp2.dir/src/utils.c.o: C_COMPILER__test_tp2_unscanned_RELE
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_tp2.dir
   OBJECT_FILE_DIR = CMakeFiles/test_tp2.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_tp2.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp2.pdb
 
 build CMakeFiles/test_tp2.dir/src/transition.c.o: C_COMPILER__test_tp2_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/transition.c || cmake_object_order_depends_target_test_tp2
   DEP_FILE = CMakeFiles/test_tp2.dir/src/transition.c.o.d
@@ -854,8 +768,6 @@ build CMakeFiles/test_tp2.dir/src/transition.c.o: C_COMPILER__test_tp2_unscanned
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_tp2.dir
   OBJECT_FILE_DIR = CMakeFiles/test_tp2.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_tp2.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp2.pdb
 
 build CMakeFiles/test_tp2.dir/src/linked_list.c.o: C_COMPILER__test_tp2_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/linked_list.c || cmake_object_order_depends_target_test_tp2
   DEP_FILE = CMakeFiles/test_tp2.dir/src/linked_list.c.o.d
@@ -863,8 +775,6 @@ build CMakeFiles/test_tp2.dir/src/linked_list.c.o: C_COMPILER__test_tp2_unscanne
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_tp2.dir
   OBJECT_FILE_DIR = CMakeFiles/test_tp2.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_tp2.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp2.pdb
 
 
 # =============================================================================
@@ -879,9 +789,8 @@ build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp2: C_EXECUTAB
   OBJECT_DIR = CMakeFiles/test_tp2.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/test_tp2.dir/
   TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp2
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp2.pdb
+  TARGET_PDB = test_tp2.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test_minimize
@@ -898,8 +807,6 @@ build CMakeFiles/test_minimize.dir/tests/test_minimize.c.o: C_COMPILER__test_min
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_minimize.dir
   OBJECT_FILE_DIR = CMakeFiles/test_minimize.dir/tests
-  TARGET_COMPILE_PDB = CMakeFiles/test_minimize.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_minimize.pdb
 
 build CMakeFiles/test_minimize.dir/src/automata.c.o: C_COMPILER__test_minimize_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata.c || cmake_object_order_depends_target_test_minimize
   DEP_FILE = CMakeFiles/test_minimize.dir/src/automata.c.o.d
@@ -907,8 +814,6 @@ build CMakeFiles/test_minimize.dir/src/automata.c.o: C_COMPILER__test_minimize_u
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_minimize.dir
   OBJECT_FILE_DIR = CMakeFiles/test_minimize.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_minimize.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_minimize.pdb
 
 build CMakeFiles/test_minimize.dir/src/utils.c.o: C_COMPILER__test_minimize_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/utils.c || cmake_object_order_depends_target_test_minimize
   DEP_FILE = CMakeFiles/test_minimize.dir/src/utils.c.o.d
@@ -916,8 +821,6 @@ build CMakeFiles/test_minimize.dir/src/utils.c.o: C_COMPILER__test_minimize_unsc
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_minimize.dir
   OBJECT_FILE_DIR = CMakeFiles/test_minimize.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_minimize.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_minimize.pdb
 
 build CMakeFiles/test_minimize.dir/src/transition.c.o: C_COMPILER__test_minimize_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/transition.c || cmake_object_order_depends_target_test_minimize
   DEP_FILE = CMakeFiles/test_minimize.dir/src/transition.c.o.d
@@ -925,8 +828,6 @@ build CMakeFiles/test_minimize.dir/src/transition.c.o: C_COMPILER__test_minimize
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_minimize.dir
   OBJECT_FILE_DIR = CMakeFiles/test_minimize.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_minimize.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_minimize.pdb
 
 build CMakeFiles/test_minimize.dir/src/linked_list.c.o: C_COMPILER__test_minimize_unscanned_RELEASE /home/luciom/Escritorio/TPs/TP-Automatas/C/src/linked_list.c || cmake_object_order_depends_target_test_minimize
   DEP_FILE = CMakeFiles/test_minimize.dir/src/linked_list.c.o.d
@@ -934,8 +835,6 @@ build CMakeFiles/test_minimize.dir/src/linked_list.c.o: C_COMPILER__test_minimiz
   INCLUDES = -I/home/luciom/Escritorio/TPs/TP-Automatas/C/src
   OBJECT_DIR = CMakeFiles/test_minimize.dir
   OBJECT_FILE_DIR = CMakeFiles/test_minimize.dir/src
-  TARGET_COMPILE_PDB = CMakeFiles/test_minimize.dir/
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_minimize.pdb
 
 
 # =============================================================================
@@ -950,9 +849,8 @@ build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_minimize: C_EXE
   OBJECT_DIR = CMakeFiles/test_minimize.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/test_minimize.dir/
   TARGET_FILE = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_minimize
-  TARGET_PDB = /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_minimize.pdb
+  TARGET_PDB = test_minimize.dbg
 
 
 #############################################
@@ -983,7 +881,11 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build automata: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata
 
+build parser: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/src/parser
+
 build test_afnd_to_afd: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_afnd_to_afd
+
+build test_belongs: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs
 
 build test_build: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build
 
@@ -994,8 +896,6 @@ build test_concat: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/t
 build test_kleene: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_kleene
 
 build test_minimize: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_minimize
-
-build test_belongs: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs
 
 build test_read_and_write: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_read_and_write
 
@@ -1015,7 +915,7 @@ build test_union: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/te
 #############################################
 # Folder: /home/luciom/Escritorio/TPs/TP-Automatas/C/bld
 
-build all: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_afnd_to_afd /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build_from_dot /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_read_and_write /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_union /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_concat /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_kleene /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp1 /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp2 /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_minimize
+build all: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/src/parser /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_afnd_to_afd /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build_from_dot /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_build /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_strings_belongs /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_belongs /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_read_and_write /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_union /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_concat /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_kleene /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp1 /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_tp2 /home/luciom/Escritorio/TPs/TP-Automatas/C/tests/exec/test_minimize
 
 # =============================================================================
 # Built-in targets
@@ -1024,14 +924,14 @@ build all: phony /home/luciom/Escritorio/TPs/TP-Automatas/C/src/automata /home/l
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/luciom/Escritorio/TPs/TP-Automatas/C/CMakeLists.txt /usr/share/cmake/Modules/CMakeCCompiler.cmake.in /usr/share/cmake/Modules/CMakeCCompilerABI.c /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake /usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake /usr/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake /usr/share/cmake/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake/Modules/CMakeDetermineSystem.cmake /usr/share/cmake/Modules/CMakeFindBinUtils.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake /usr/share/cmake/Modules/CMakeSystem.cmake.in /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CMakeTestCCompiler.cmake /usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake /usr/share/cmake/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/share/cmake/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/LCC-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Internal/FeatureTesting.cmake /usr/share/cmake/Modules/Platform/Linux-Determine-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.26.3/CMakeCCompiler.cmake CMakeFiles/3.26.3/CMakeCXXCompiler.cmake CMakeFiles/3.26.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /home/luciom/Escritorio/TPs/TP-Automatas/C/CMakeLists.txt /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/luciom/Escritorio/TPs/TP-Automatas/C/CMakeLists.txt /usr/share/cmake/Modules/CMakeCCompiler.cmake.in /usr/share/cmake/Modules/CMakeCCompilerABI.c /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake /usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake /usr/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake /usr/share/cmake/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake/Modules/CMakeDetermineSystem.cmake /usr/share/cmake/Modules/CMakeFindBinUtils.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake /usr/share/cmake/Modules/CMakeSystem.cmake.in /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CMakeTestCCompiler.cmake /usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake /usr/share/cmake/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/share/cmake/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/LCC-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Internal/FeatureTesting.cmake /usr/share/cmake/Modules/Platform/Linux-Determine-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.26.3/CMakeCCompiler.cmake CMakeFiles/3.26.3/CMakeCXXCompiler.cmake CMakeFiles/3.26.3/CMakeSystem.cmake: phony
+build /home/luciom/Escritorio/TPs/TP-Automatas/C/CMakeLists.txt /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
 
 
 #############################################

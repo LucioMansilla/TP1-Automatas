@@ -33,6 +33,7 @@ void free_list(List *list);
 void add_list_list(List_List *ls, List *data);
 void print_list_list(List_List *list);
 List_List *create_empty_list_list();
+List *copy_list(List *src);
 
 
 #endif
