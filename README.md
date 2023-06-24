@@ -30,6 +30,27 @@ Dependencies:
 * `run.sh` will report the test status.
 * A log file will be generated after running `run.sh` in the `C/tests/exec` directory. It will contain additional information about the tests, such as printouts of automata and lists.
 
+# MiniGrep Usage:
+
+To run this project, it's necessary to build it first. We've provided a script that does this task for you and also accepts the necessary parameters to test the 'grep' function.
+
+```bash
+./grep.sh <regex> <line>
+```
+Where `<regex>` is the regular expression to test and `<line>` is the line or phrase to test against the regular expression.
+
+For example, to test the regular expression `a*b` against the line `aab`, you can run the following command:
+
+```bash
+./grep.sh "a*" "aab"
+```
+
+The output of this command will be:
+
+```bash
+The line matches the provided regular expression.
+```
+
 
 ## How to Run `run.sh`:
 
@@ -80,26 +101,7 @@ Feel free to explore the code and run the provided tests. If you encounter any i
 * [Test Parser:]() `./exec/test_parser`
 * [Test Mini Grep:]() `./exec/test_mini_grep`
 
-# Example of MiniGrep Usage:
 
-To run this project, it's necessary to build it first. We've provided a script that does this task for you and also accepts the necessary parameters to test the 'grep' function.
-
-```bash
-./grep.sh <regex> <line>
-```
-Where `<regex>` is the regular expression to test and `<line>` is the line or phrase to test against the regular expression.
-
-For example, to test the regular expression `a*b` against the line `aab`, you can run the following command:
-
-```bash
-./grep.sh "a*" "aab"
-```
-
-The output of this command will be:
-
-```bash
-The line matches the provided regular expression.
-```
 # PNG files(TP1):
 
 In the `TP-AUTOMATAS/C/assets` directory, you can find the following PNG files:
