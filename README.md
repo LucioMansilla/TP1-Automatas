@@ -1,8 +1,8 @@
 # TP-Automatas
 
-This is an academic project, which consists of the implementation of a Nondeterministic Finite Automaton (AFND). As a new enhancement, a "minigrep" feature has been added, which allows you to test a regular expression against a string right from the command line. This minigrep feature is a powerful tool that extends the usefulness of this project. 
+This is an academic project, which consists of the implementation of a Nondeterministic Finite Automaton (AFND). As a new enhancement, a "minigrep" feature has been added, which allows you to test a regular expression against a string right from the command line.
 
-The minigrep feature can be run using the `grep.sh` script provided. This script not only builds the project but also accepts a regular expression and a line or phrase as arguments. It then runs the minigrep feature with these inputs, making it easy to test and use.
+The minigrep feature can be run using the `grep.sh` script provided. This script not only builds the project but also accepts a regular expression and a line or phrase as arguments.
 
 The project is written in C and Python. In C, it has different tests.
 
