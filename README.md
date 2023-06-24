@@ -39,7 +39,7 @@ To run this project, it's necessary to build it first. We've provided a script t
 ```
 Where `<regex>` is the regular expression to test and `<line>` is the line or phrase to test against the regular expression.
 
-For example, to test the regular expression `a*b` against the line `aab`, you can run the following command:
+For example, to test the regular expression `a*` against the line `aab`, you can run the following command:
 
 ```bash
 ./grep.sh "a*" "aab"
