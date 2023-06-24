@@ -39,6 +39,7 @@ bool minigrep(char *regex, char *line) {
     return belongs(concat_final_regex_minimized, line);
 }
 
+//Esta función no se utiliza más. se dejan ambas versiones por ahora.
 bool minigrep_sub_string(char *regex, char *line) {
 
     int line_length = strlen(line);
