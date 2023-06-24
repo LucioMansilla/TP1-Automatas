@@ -11,11 +11,6 @@ Initial state: 0
 Final states: 2->NULL
 ---------------------
 Transformed Automata(AFD): 
-T: 
-T[0]: 0->NULL
-T[1]: Empty list
-T[2]: 1->2->NULL
-T[3]: 2->NULL
 -------Automata-------
 K: 3->2->1->0->NULL
 Alphabet: 1->0->NULL
@@ -137,6 +132,7 @@ From 7 with 1 to 8->NULL
 From 8 with 0 to 9->NULL
 From 9 with 1 to 10->NULL
 From 9 with _ to 11->NULL
+From 10 with 0 to 9->NULL
 Initial state: 0
 Final states: 11->NULL
 ---------------------
@@ -173,12 +169,6 @@ From 3 with b to 3->NULL
 Initial state: 0
 Final states: 2->NULL
 ---------------------
-T: 
-T[0]: 0->NULL
-T[1]: 1->NULL
-T[2]: Empty list
-T[3]: 3->NULL
-T[4]: 1->2->NULL
 The conversion from AFND to AFD has been completed.
 You can view the result in the file AFD_TP.dot
 belongs: 0
@@ -187,21 +177,7 @@ belongs: 0
 Kleene: 
 Union: 
 Minimize: 
-T: 
-T[0]: 0->8->1->14->9->7->2->15->NULL
-T[1]: Empty list
-T[2]: 3->10->NULL
-T[3]: 11->4->NULL
-T[4]: 5->12->7->2->14->9->15->NULL
-T[5]: 13->6->NULL
  -- Test TP2 passed -- 
-T: 
-T[0]: 0->NULL
-T[1]: 1->NULL
-T[2]: Empty list
-T[3]: 2->NULL
-T[4]: 3->NULL
-T[5]: 4->NULL
 --- Test Minimize: ---
 Minimize: 
 -------Automata-------
@@ -222,3 +198,235 @@ Initial state: 2
 Final states: 4->NULL
 ---------------------
 Test Minimize Passed
+--- Test Parser ---
+Test 1
+-------Automata-------
+K: 9->8->7->6->5->4->3->2->1->0->NULL
+Alphabet: 49->50->NULL
+Delta: 
+From 0 with _ to 3->1->NULL
+From 1 with b to 2->NULL
+From 2 with _ to 9->NULL
+From 3 with _ to 8->4->NULL
+From 4 with a to 5->NULL
+From 5 with _ to 6->NULL
+From 6 with b to 7->NULL
+From 7 with _ to 8->4->NULL
+From 8 with _ to 9->NULL
+Initial state: 0
+Final states: 9->NULL
+---------------------
+Input: abab
+Input: b
+Input: ab
+Passed
+
+Test 2
+-------Automata-------
+K: 5->4->3->2->1->0->NULL
+Alphabet: 49->50->51->NULL
+Delta: 
+From 0 with a to 1->NULL
+From 1 with _ to 2->NULL
+From 2 with b to 3->NULL
+From 3 with _ to 4->NULL
+From 4 with c to 5->NULL
+Initial state: 0
+Final states: 5->NULL
+---------------------
+Input: abc
+Passed
+
+Test 3
+-------Automata-------
+K: 5->4->3->2->1->0->NULL
+Alphabet: 50->49->NULL
+Delta: 
+From 0 with _ to 3->1->NULL
+From 1 with a to 2->NULL
+From 2 with _ to 5->NULL
+From 3 with b to 4->NULL
+From 4 with _ to 5->NULL
+Initial state: 0
+Final states: 5->NULL
+---------------------
+Input: a
+Input: b
+Passed
+
+Test 4
+-------Automata-------
+K: 3->2->1->0->NULL
+Alphabet: 49->NULL
+Delta: 
+From 0 with _ to 3->1->NULL
+From 1 with a to 2->NULL
+From 2 with _ to 3->1->NULL
+Initial state: 0
+Final states: 3->NULL
+---------------------
+Input: aaaa
+Input: a
+Input: 
+Passed
+
+Test 5
+-------Automata-------
+K: 5->4->3->2->1->0->NULL
+Alphabet: 49->50->NULL
+Delta: 
+From 0 with _ to 5->1->NULL
+From 1 with a to 2->NULL
+From 2 with _ to 3->NULL
+From 3 with b to 4->NULL
+From 4 with _ to 5->1->NULL
+Initial state: 0
+Final states: 5->NULL
+---------------------
+Input: abab
+Input: ab
+Passed
+
+Test 6
+-------Automata-------
+K: 7->6->5->4->3->2->1->0->NULL
+Alphabet: 50->49->NULL
+Delta: 
+From 0 with _ to 7->1->NULL
+From 1 with _ to 4->2->NULL
+From 2 with a to 3->NULL
+From 3 with _ to 6->NULL
+From 4 with b to 5->NULL
+From 5 with _ to 6->NULL
+From 6 with _ to 7->1->NULL
+Initial state: 0
+Final states: 7->NULL
+---------------------
+Input: abab
+Input: baba
+Input: aaa
+Input: bbbb
+Passed
+
+Test 7
+-------Automata-------
+K: 9->8->7->6->5->4->3->2->1->0->NULL
+Alphabet: 50->49->NULL
+Delta: 
+From 0 with _ to 5->1->NULL
+From 1 with _ to 4->2->NULL
+From 2 with a to 3->NULL
+From 3 with _ to 4->2->NULL
+From 4 with _ to 9->NULL
+From 5 with _ to 8->6->NULL
+From 6 with b to 7->NULL
+From 7 with _ to 8->6->NULL
+From 8 with _ to 9->NULL
+Initial state: 0
+Final states: 9->NULL
+---------------------
+Input: aaa
+Input: bbb
+Passed
+
+Test 8
+-------Automata-------
+K: 7->6->5->4->3->2->1->0->NULL
+Alphabet: 50->49->51->NULL
+Delta: 
+From 0 with _ to 3->1->NULL
+From 1 with c to 2->NULL
+From 2 with _ to 7->NULL
+From 3 with a to 4->NULL
+From 4 with _ to 5->NULL
+From 5 with b to 6->NULL
+From 6 with _ to 7->NULL
+Initial state: 0
+Final states: 7->NULL
+---------------------
+Input: ab
+Input: c
+Passed
+
+Test 9
+-------Automata-------
+K: 7->6->5->4->3->2->1->0->NULL
+Alphabet: 51->50->49->NULL
+Delta: 
+From 0 with _ to 3->1->NULL
+From 1 with a to 2->NULL
+From 2 with _ to 7->NULL
+From 3 with b to 4->NULL
+From 4 with _ to 5->NULL
+From 5 with c to 6->NULL
+From 6 with _ to 7->NULL
+Initial state: 0
+Final states: 7->NULL
+---------------------
+Input: bc
+Input: a
+Passed
+
+Test 10
+-------Automata-------
+K: 7->6->5->4->3->2->1->0->NULL
+Alphabet: 50->49->51->NULL
+Delta: 
+From 0 with _ to 3->1->NULL
+From 1 with c to 2->NULL
+From 2 with _ to 7->NULL
+From 3 with a to 4->NULL
+From 4 with _ to 5->NULL
+From 5 with b to 6->NULL
+From 6 with _ to 7->NULL
+Initial state: 0
+Final states: 7->NULL
+---------------------
+Input: ab
+Input: c
+Passed
+
+
+--- Test Parser Passed ---
+--- Test Mini-Grep ---
+Test 1 = expr: a.b*, line: ab, expected: true 
+line: ab
+PASSED
+Test 2 = expr: a.b*, line: abb, expected: true 
+line: abb
+PASSED
+Test 3 = expr: a.b*, line: abbb, expected: true 
+line: abbb
+PASSED
+Test 4 = expr: a.b*, line: bbb, expected: false 
+line: bbb
+PASSED
+Test 5 = expr: a.b*, line: c, expected: false 
+line: c
+PASSED
+Test 6 = expr: (a.b)*, line: abab, expected: true 
+line: abab
+PASSED
+Test 7 = expr: (a.b)*, line: babbc, expected: true 
+line: babbc
+PASSED
+Test 8 = expr: (a.b)*, line: aba, expected: true 
+line: aba
+PASSED
+Test 9 = expr: (a|b)*, line: a, expected: true 
+line: a
+PASSED
+Test 10 = expr: (a|b)*, line: b, expected: true 
+line: b
+PASSED
+Test 11 = expr: (a|b)*, line: c, expected: true 
+line: c
+PASSED
+Test 12 = expr: a*, line: aaaa, expected: true 
+line: aaaa
+PASSED
+Test 13 = expr: a*, line: b, expected: true 
+line: b
+PASSED
+
+--- Test Mini-Grep Passed ---

@@ -1,0 +1,6 @@
+- [ ] Hacer tests para el parser.
+- [ ] Hacer tests para el minigrep. 
+- [ ] Añadirlo al run.sh.
+- [ ] Correr Valgrind en busca de memory leaks.
+- [ ] Cambiar "LinkedList" por "Set".
+- [ ] ver de quitar los exit(1) y reemplazarlos por Error Enum..

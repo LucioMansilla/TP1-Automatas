@@ -1,11 +1,10 @@
 # TP-Automatas
 
-This is an academic project, which consists of the implementation of a Nondeterministic Finite Automaton (AFND).
+This is an academic project, which consists of the implementation of a Nondeterministic Finite Automaton (AFND). As a new enhancement, a "minigrep" feature has been added, which allows you to test a regular expression against a string right from the command line. This minigrep feature is a powerful tool that extends the usefulness of this project. 
 
-It is written in C and Python.
+The minigrep feature can be run using the `grep.sh` script provided. This script not only builds the project but also accepts a regular expression and a line or phrase as arguments. It then runs the minigrep feature with these inputs, making it easy to test and use.
 
-In C, it has different tests.
-
+The project is written in C and Python. In C, it has different tests.
 
 # Usage
 
@@ -24,7 +23,7 @@ Dependencies:
 
 ## Important Notes:
 
-* Executables are generated in the `tests/exec` directory.
+* Executables tests are generated in the `tests/exec` directory.
 * Files "AFND_TP.dot", "AFND_TP2.dot", and "AFND.dot" are used for various tests.
 * Files "AFD_TP.dot", "kleene.dot", "union.dot", "concatenate.dot", "minimize.dot", and "write_afnd.dot" are generated after running `run.sh`.
 * You can find both input and output files in the `C/tests` directory.
@@ -52,6 +51,8 @@ test_kleene passed
 test_tp1 passed
 test_tp2 passed
 test_minimize passed
+test_parser passed 
+test_mini_grep passed
 
 Tests finished!. Check exec/logs for more information
 Check tests folder for the .dot files generated
@@ -76,8 +77,29 @@ Feel free to explore the code and run the provided tests. If you encounter any i
 * [Test TP1:]() `./exec/test_tp1`
 * [Test TP2:]() `./exec/test_tp2`
 * [Test Union:]() `./exec/test_union`
+* [Test Parser:]() `./exec/test_parser`
+* [Test Mini Grep:]() `./exec/test_mini_grep`
 
+# Example of MiniGrep Usage:
 
+To run this project, it's necessary to build it first. We've provided a script that does this task for you and also accepts the necessary parameters to test the 'grep' function.
+
+```bash
+./grep.sh <regex> <line>
+```
+Where `<regex>` is the regular expression to test and `<line>` is the line or phrase to test against the regular expression.
+
+For example, to test the regular expression `a*b` against the line `aab`, you can run the following command:
+
+```bash
+./grep.sh "a*" "aab"
+```
+
+The output of this command will be:
+
+```bash
+The line matches the provided regular expression.
+```
 # PNG files(TP1):
 
 In the `TP-AUTOMATAS/C/assets` directory, you can find the following PNG files:

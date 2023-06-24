@@ -1,0 +1,8 @@
+digraph{
+rankdir=LR;
+inic[shape=point];
+inic->0;
+0->1 [label="a"];
+
+1[shape=doublecircle];
+}
