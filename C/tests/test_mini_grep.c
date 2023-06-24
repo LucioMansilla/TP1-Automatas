@@ -10,9 +10,9 @@ int main(void) {
         bool expected;
     } tests[] = {
         {"a.b*", "ab", true},  {"a.b*", "abb", true},    {"a.b*", "abbb", true},    {"a.b*", "bbb", false},
-        {"a.b*", "ac", true},  {"(a.b)*", "abab", true}, {"(a.b)*", "babbc", true}, {"(a.b)*", "aba", true},
-        {"(a|b)*", "a", true}, {"(a|b)*", "b", true},    {"(a|b)*", "c", false},    {"a*", "aaaa", true},
-        {"a*", "b", false},
+        {"a.b*", "c", false},  {"(a.b)*", "abab", true}, {"(a.b)*", "babbc", true}, {"(a.b)*", "aba", true},
+        {"(a|b)*", "a", true}, {"(a|b)*", "b", true},    {"(a|b)*", "c", true},     {"a*", "aaaa", true},
+        {"a*", "b", true},
     };
     int numTests = sizeof(tests) / sizeof(tests[0]);
     int test;

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 int main() {
     printf("## IMPORTANnnnnT:\n");
     printf("* Executables are generated in the tests/exec directory.\n");

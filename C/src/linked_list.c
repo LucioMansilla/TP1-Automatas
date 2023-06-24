@@ -161,7 +161,7 @@ void print_list(List *ls) {
     }
 
     while (cur != NULL) {
-        printf("%c", chr(cur->data));
+        printf("%d", cur->data);
         cur = cur->next;
         if (cur != NULL) {
             printf("->");

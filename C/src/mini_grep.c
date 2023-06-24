@@ -1,64 +1,76 @@
 #include "../libs/mini_grep.h"
+#include "../libs/automata.h"
 #include <stdbool.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 char *input;
 int position = 0;
 
-Automata parser(char* regex){
+Automata parser(char *regex) {
     input = regex;
     position = 0;
     return S();
 }
-
-bool minigrep(char* regex, char* line) {
-    int line_length = strlen(line);
-    int max_length = strlen(regex) + 2;  // Para el caracter inicial y el '#'
-    char* regex_with_end_marker = (char*) malloc((max_length + 1) * sizeof(char));
-    strcpy(regex_with_end_marker, regex);
-    strcat(regex_with_end_marker, "#");
-
-    // Generamos el autómata para la expresión regular.
-    input = regex_with_end_marker;
-    position = 0;
-    Automata regex_automaton = S();
-
-    Automata regex_automaton_minimized = minimize(to_AFD(regex_automaton));
-    // Liberamos la memoria de la cadena auxiliar.
-    free(regex_with_end_marker);
-
-    // Ahora comprobamos cada subcadena de 'line' para ver si es aceptada por el autómata.
-    for (int start = 0; start < line_length; start++) {
-        for (int end = start + 1; end <= line_length; end++) {
-            int substring_length = end - start;
-
-            // Creamos una subcadena de 'line' para evaluar.
-            char* substring = (char*) malloc((substring_length + 1) * sizeof(char));
-            memcpy(substring, &line[start], substring_length);
-            substring[substring_length] = '\0';
-
-            // Comprobamos si el autómata acepta esta subcadena.
-            bool is_match = belongs(regex_automaton_minimized, substring);
-            free(substring);
-            
-            if (is_match) {
-                return true;
-            }
-        }
-    }
-
-    // Si no se encontró ninguna coincidencia, devolvemos falso.
-    return false;
-}
-
 
 bool accept(char c) {
     if (input[position] == c) {
         position++;
         return true;
     }
+    return false;
+}
+
+bool minigrep(char *regex, char *line) {
+
+    int max_length = strlen(regex);
+    char *regex_with_end_marker = (char *)malloc((max_length + 1) * sizeof(char));
+    strcpy(regex_with_end_marker, regex);
+    strcat(regex_with_end_marker, "#");
+
+    Automata universe_automaton = parser("(a|b|c)*#");
+    Automata regex_automaton = parser(regex_with_end_marker);
+    Automata concat_universe_regex = concat(regex_automaton, universe_automaton);
+
+    Automata concat_final_regex = concat(universe_automaton, concat_universe_regex);
+
+    Automata concat_final_regex_minimized = minimize(to_AFD(concat_final_regex));
+    return belongs(concat_final_regex_minimized, line);
+}
+
+bool minigrep_sub_string(char *regex, char *line) {
+
+    int line_length = strlen(line);
+    int max_length = strlen(regex) + 2;
+    char *regex_with_end_marker = (char *)malloc((max_length + 1) * sizeof(char));
+    strcpy(regex_with_end_marker, regex);
+    strcat(regex_with_end_marker, "#");
+
+    input = regex_with_end_marker;
+    position = 0;
+    Automata regex_automaton = S();
+
+    Automata regex_automaton_minimized = minimize(to_AFD(regex_automaton));
+    free(regex_with_end_marker);
+
+    for (int start = 0; start < line_length; start++) {
+        for (int end = start + 1; end <= line_length; end++) {
+            int substring_length = end - start;
+
+            char *substring = (char *)malloc((substring_length + 1) * sizeof(char));
+            memcpy(substring, &line[start], substring_length);
+            substring[substring_length] = '\0';
+
+            bool is_match = belongs(regex_automaton_minimized, substring);
+            free(substring);
+
+            if (is_match) {
+                return true;
+            }
+        }
+    }
+
     return false;
 }
 
@@ -74,7 +86,7 @@ Automata L() {
 
 Automata P() {
     if (accept('(')) {
-        
+
         Automata e = E();
         if (accept(')')) {
             return e;
@@ -127,6 +139,6 @@ Automata E_prime(Automata e) {
 
 Automata S() {
     Automata e = E();
-    if (accept('#') &&  position == strlen(input)) return e;
+    if (accept('#') && position == strlen(input)) return e;
     exit(1);
 }

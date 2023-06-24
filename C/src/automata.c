@@ -3,14 +3,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 Automata create_single_char_automaton(char a) {
     List *k = create_from((int[]){0, 1}, 2);
-    Transition transitions[] = {
-        create_transition(0, ord(a), create_from((int[]){1}, 1)), {-1, -1, NULL} // Elemento sentinela
-    };
+    Transition transitions[] = {create_transition(0, ord(a), create_from((int[]){1}, 1)), {-1, -1, NULL}};
     List **delta = get_delta(transitions, 2);
     return create_automaton(k, create_from((int[]){ord(a)}, 1), delta, 0, create_from((int[]){1}, 1));
 }
+
 Automata create_automaton(List *k, List *alphabet, List **delta, int initial_state, List *final_states) {
     Automata a;
     a.k = k;
@@ -20,6 +20,7 @@ Automata create_automaton(List *k, List *alphabet, List **delta, int initial_sta
     a.final_states = final_states;
     return a;
 }
+
 int belongs(Automata a, char *w) {
     int i = 0;
     List *d = lambda_clousure(a, create_from((int[]){a.initial_state}, 1));
@@ -30,6 +31,7 @@ int belongs(Automata a, char *w) {
     }
     return contains_any(a.final_states, d);
 }
+
 List *move(Automata a, List *states, int symbol) {
     List *new_states = create_empty_list();
     int length_states = states->size;
@@ -47,6 +49,7 @@ List *move(Automata a, List *states, int symbol) {
     }
     return new_states;
 }
+
 List *union_alphabet(List *alphabet_1, List *alphabet_2) {
     List *new_alphabet = create_empty_list();
     for (int i = 0; i < alphabet_1->size; i++) {
@@ -57,6 +60,7 @@ List *union_alphabet(List *alphabet_1, List *alphabet_2) {
     }
     return new_alphabet;
 }
+
 Automata rename_states(Automata automaton, int shift, List *new_k) {
     Automata result;
     result.alphabet = automaton.alphabet;
@@ -93,6 +97,7 @@ Automata rename_states(Automata automaton, int shift, List *new_k) {
     Automata a = create_automaton(new_k, result.alphabet, result.delta, result.initial_state, result.final_states);
     return a;
 }
+
 Automata kleene_clousure(Automata automaton) {
     List *new_k = create_K(automaton.k->size + 2);
     List *new_alphabet = automaton.alphabet;
@@ -122,6 +127,7 @@ Automata kleene_clousure(Automata automaton) {
     add(&new_delta[0][LAMBDA], shifted_automaton.k->size - 1);
     return create_automaton(new_k, new_alphabet, new_delta, new_initial_state, final_states);
 }
+
 Automata compose(Automata automaton_1, Automata automaton_2) {
 
     if (automaton_1.k->size > automaton_2.k->size) {
@@ -167,33 +173,11 @@ Automata compose(Automata automaton_1, Automata automaton_2) {
     return create_automaton(new_k, new_alphabet, new_delta, 0, final_state);
 }
 
-Automata copy_automaton(Automata a1) {
-    List *new_k = create_K(a1.k->size);
-    List *new_alphabet = copy_list(a1.alphabet);
-    int new_initial_state = a1.initial_state;
-    List *final_states = copy_list(a1.final_states);
-    List **new_delta = (List **)malloc(sizeof(List) * (a1.k->size));
-    for (int i = 0; i < a1.k->size; i++) {
-        new_delta[i] = (List *)malloc(sizeof(List) * ALPHABET_SIZE);
-        for (int j = 0; j < ALPHABET_SIZE; j++) {
-            new_delta[i][j] = *create_empty_list();
-        }
-    }
-    for (int i = 0; i < a1.k->size; i++) {
-        for (int j = 0; j < ALPHABET_SIZE; j++) {
-            for (int k = 0; k < a1.delta[i][j].size; k++) {
-                add(&new_delta[i][j], get_data(&a1.delta[i][j], k));
-            }
-        }
-    }
-    return create_automaton(new_k, new_alphabet, new_delta, new_initial_state, final_states);
-}
-
 void free_automaton(Automata *a1) {
-    free(a1->k);
-    free(a1->alphabet);
-    free(a1->delta);
-    free(a1->final_states);
+    free_list(a1->k);
+    free_list(a1->alphabet);
+    free_list(a1->delta);
+    free_list(a1->final_states);
 }
 
 Automata concat(Automata automaton_1, Automata automaton_2) {
@@ -204,7 +188,7 @@ Automata concat(Automata automaton_1, Automata automaton_2) {
     Automata automata_temp = rename_states(automaton_2, automaton_1.k->size, new_k);
     int shift = automaton_1.k->size;
     List *final_states = copy_list(automata_temp.final_states);
-    List **new_delta = (List **)malloc(sizeof(List) * (automaton_1.k->size + shift));
+    List **new_delta = (List **)malloc(sizeof(List) * (new_k->size));
 
     for (int i = 0; i < automaton_1.k->size + automaton_2.k->size + 1; i++) {
         new_delta[i] = (List *)malloc(sizeof(List) * ALPHABET_SIZE);
@@ -237,6 +221,7 @@ Automata concat(Automata automaton_1, Automata automaton_2) {
 
     return new;
 }
+
 List *lambda_clousure(Automata a, List *states) {
     int visited[a.k->size][2];
     int visited_size = 0;
@@ -277,6 +262,7 @@ void print_automaton(Automata a) {
     print_list(a.final_states);
     printf("---------------------\n");
 }
+
 int get_equivalent_class(List_List *P, int state) {
     int size = P->size;
     List_List *curr = P->next;
@@ -288,6 +274,7 @@ int get_equivalent_class(List_List *P, int state) {
     }
     return -1;
 }
+
 List *get_pi(List_List *P, int idx) {
     int size = P->size;
     List_List *curr = P->next;
@@ -299,6 +286,7 @@ List *get_pi(List_List *P, int idx) {
     }
     return NULL;
 }
+
 List *get_final_state_minimize(Automata automaton, List_List *equiv_class) {
     List *final_states = create_empty_list();
     int size = equiv_class->size;
@@ -314,27 +302,7 @@ List *get_final_state_minimize(Automata automaton, List_List *equiv_class) {
     }
     return final_states;
 }
-void parse(char *str) {}
-/*
 
-SD( S -> E # ) =  { ( a b c }
-SD( E -> T E' ) = { ( a b c }
-SD( E' -> | T E' ) = { | }
-SD( E' -> LAMBDA ) = { # ) }
-SD( T -> F T' )   = { ( a b c }
-SD( T' -> . F T' ) = { . }
-SD( T' -> LAMBDA ) = { | ) # }
-SD( F -> P F' ) = { ( a b c }
-SD( F' -> * ) =  { * }
-SD( F' -> LAMBDA ) = { . | ) # }
-SD( P -> ( E ) ) = { ( }
-SD( P -> L ) = { a b c }
-SD (L -> a) = {a}
-SD (L -> b) = {b}
-SD (L -> c) = {c}
-
-
-*/
 List_List *quotient_set(Automata automaton) {
     List_List *P = create_empty_list_list();
     List_List *P_prime = create_empty_list_list();
@@ -418,6 +386,7 @@ int get_equivalent_index(List_List *P, int state) {
     }
     return -1;
 }
+
 Automata minimize(Automata automaton) {
     List_List *equiv_class = quotient_set(automaton);
     List *K = create_K(equiv_class->size);
@@ -447,6 +416,7 @@ Automata minimize(Automata automaton) {
     List **delta = get_delta(transitions, K->size);
     return create_automaton(K, automaton.alphabet, delta, initial_state, final_states);
 }
+
 Automata to_AFD(Automata a) {
     List *states = a.k;
     List **T = (List **)malloc(100 * sizeof(List *));
@@ -507,13 +477,9 @@ Automata to_AFD(Automata a) {
             curr = curr->next;
         }
     }
-/*     printf("T: \n");
-    for (int i = 0; i < t_size; i++) {
-        printf("T[%d]: ", i);
-        print_list(T[i]);
-    } */
     return create_automaton(new_k, new_alphabet, new_delta, new_initial_state, new_final_states);
 }
+
 void parser_transitions(int from, int to, int *symbols, int size_symbols, Transition *transitions,
                         int *transition_count) {
     int already_symbol_exists = 0;
@@ -532,6 +498,7 @@ void parser_transitions(int from, int to, int *symbols, int size_symbols, Transi
         }
     }
 }
+
 Automata read_automaton_from_dot(char *filename) {
     FILE *file = fopen(filename, "r");
     Automata a;
@@ -592,6 +559,7 @@ Automata read_automaton_from_dot(char *filename) {
     fclose(file);
     return a;
 }
+
 void write_automaton_to_dot(Automata a, char *filename) {
     FILE *file = fopen(filename, "w");
     fprintf(file, "digraph{\n");

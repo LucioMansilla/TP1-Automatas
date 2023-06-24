@@ -9,9 +9,9 @@ set(TESTS_EXEC ${automatasTP_SOURCE_DIR}/tests/exec)
 
 
 
-add_executable(automata ${SRC_DIR}/main.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
-target_include_directories(automata PUBLIC ${automatasTP_SOURCE_DIR}/src)
-set_target_properties(automata PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${automatasTP_SOURCE_DIR}/src)
+add_executable(grep ${SRC_DIR}/run.c  ${SRC_DIR}/mini_grep.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
+target_include_directories(grep PUBLIC ${automatasTP_SOURCE_DIR}/src)
+set_target_properties(grep PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${automatasTP_SOURCE_DIR}/src)
 
 add_executable(test_afnd_to_afd ${TESTS_DIR}/test_afnd_to_afd.c ${SRC_DIR}/automata.c ${SRC_DIR}/utils.c ${SRC_DIR}/transition.c ${SRC_DIR}/linked_list.c)
 target_include_directories(test_afnd_to_afd PUBLIC ${automatasTP_SOURCE_DIR}/src)

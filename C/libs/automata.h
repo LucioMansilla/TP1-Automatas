@@ -26,9 +26,7 @@ Automata kleene_clousure(Automata automaton);
 Automata compose(Automata automaton_1, Automata automaton_2);
 List_List *quotient_set(Automata automaton);
 Automata minimize(Automata automaton);
-Automata null_automaton();
 Automata create_single_char_automaton(char a);
-Automata copy_automaton(Automata automaton);
 void free_automaton(Automata *a1);
 
 #endif
